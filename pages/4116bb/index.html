@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ELK笔记 | 小诺文档中心</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css">
+    <meta name="description" content="运维技术文档,mysql,k8s,docker,linux,shell,python等技术文章。">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="keywords" content="运维技术文档,mysql,k8s,docker,linux,shell,python,技术文档,学习,面试,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.92233c96.css" as="style"><link rel="preload" href="/assets/js/app.38f1b0a4.js" as="script"><link rel="preload" href="/assets/js/2.6beb1dc7.js" as="script"><link rel="preload" href="/assets/js/27.5b193a22.js" as="script"><link rel="prefetch" href="/assets/js/10.4365b950.js"><link rel="prefetch" href="/assets/js/100.8dac6c81.js"><link rel="prefetch" href="/assets/js/101.a5556ac1.js"><link rel="prefetch" href="/assets/js/102.e3ff38b9.js"><link rel="prefetch" href="/assets/js/103.3bcf44f5.js"><link rel="prefetch" href="/assets/js/104.6d56e53e.js"><link rel="prefetch" href="/assets/js/105.4fc9762e.js"><link rel="prefetch" href="/assets/js/106.f507561a.js"><link rel="prefetch" href="/assets/js/107.6c94c756.js"><link rel="prefetch" href="/assets/js/108.f7ff1945.js"><link rel="prefetch" href="/assets/js/109.aeb1e532.js"><link rel="prefetch" href="/assets/js/11.fe1ff844.js"><link rel="prefetch" href="/assets/js/110.dda67b83.js"><link rel="prefetch" href="/assets/js/111.5b990f24.js"><link rel="prefetch" href="/assets/js/112.0a27d3a0.js"><link rel="prefetch" href="/assets/js/113.972cd001.js"><link rel="prefetch" href="/assets/js/114.875814a1.js"><link rel="prefetch" href="/assets/js/115.ec235d59.js"><link rel="prefetch" href="/assets/js/116.03bd2386.js"><link rel="prefetch" href="/assets/js/117.68765825.js"><link rel="prefetch" href="/assets/js/118.9d6d0255.js"><link rel="prefetch" href="/assets/js/119.ff84a82f.js"><link rel="prefetch" href="/assets/js/12.aa21f453.js"><link rel="prefetch" href="/assets/js/120.20639785.js"><link rel="prefetch" href="/assets/js/121.6c546150.js"><link rel="prefetch" href="/assets/js/122.48e85de5.js"><link rel="prefetch" href="/assets/js/123.fc931745.js"><link rel="prefetch" href="/assets/js/124.797d5fda.js"><link rel="prefetch" href="/assets/js/125.b23a31c7.js"><link rel="prefetch" href="/assets/js/126.d7a182fd.js"><link rel="prefetch" href="/assets/js/127.167a63d6.js"><link rel="prefetch" href="/assets/js/128.878d4a7e.js"><link rel="prefetch" href="/assets/js/129.a8957dfa.js"><link rel="prefetch" href="/assets/js/13.161be064.js"><link rel="prefetch" href="/assets/js/130.3961a295.js"><link rel="prefetch" href="/assets/js/131.9c4e7a56.js"><link rel="prefetch" href="/assets/js/132.41d26584.js"><link rel="prefetch" href="/assets/js/133.6d91047e.js"><link rel="prefetch" href="/assets/js/134.121ecf0e.js"><link rel="prefetch" href="/assets/js/135.6e30234c.js"><link rel="prefetch" href="/assets/js/136.6fab7ce4.js"><link rel="prefetch" href="/assets/js/137.209af36e.js"><link rel="prefetch" href="/assets/js/138.660f236e.js"><link rel="prefetch" href="/assets/js/139.81c29d19.js"><link rel="prefetch" href="/assets/js/14.d0f13635.js"><link rel="prefetch" href="/assets/js/140.d8f594ca.js"><link rel="prefetch" href="/assets/js/141.89fbea1c.js"><link rel="prefetch" href="/assets/js/142.643bccec.js"><link rel="prefetch" href="/assets/js/143.f270bffc.js"><link rel="prefetch" href="/assets/js/144.cf6f4c9a.js"><link rel="prefetch" href="/assets/js/145.093699b5.js"><link rel="prefetch" href="/assets/js/146.876575d0.js"><link rel="prefetch" href="/assets/js/147.dc120635.js"><link rel="prefetch" href="/assets/js/148.4a3ba80f.js"><link rel="prefetch" href="/assets/js/149.4afb7469.js"><link rel="prefetch" href="/assets/js/15.af46dbb5.js"><link rel="prefetch" href="/assets/js/150.4eb38cf2.js"><link rel="prefetch" href="/assets/js/151.4fe6a931.js"><link rel="prefetch" href="/assets/js/16.4cbf8beb.js"><link rel="prefetch" href="/assets/js/17.1da2b6ae.js"><link rel="prefetch" href="/assets/js/18.0402bfbf.js"><link rel="prefetch" href="/assets/js/19.230bfe93.js"><link rel="prefetch" href="/assets/js/20.0d20ddb2.js"><link rel="prefetch" href="/assets/js/21.9dbdbc8b.js"><link rel="prefetch" href="/assets/js/22.1410508d.js"><link rel="prefetch" href="/assets/js/23.63089216.js"><link rel="prefetch" href="/assets/js/24.e6fe9306.js"><link rel="prefetch" href="/assets/js/25.1240d0c9.js"><link rel="prefetch" href="/assets/js/26.0f4fb46d.js"><link rel="prefetch" href="/assets/js/28.90e27733.js"><link rel="prefetch" href="/assets/js/29.cdb75f6c.js"><link rel="prefetch" href="/assets/js/3.1229de89.js"><link rel="prefetch" href="/assets/js/30.23c0524a.js"><link rel="prefetch" href="/assets/js/31.bc292e1e.js"><link rel="prefetch" href="/assets/js/32.79645dcf.js"><link rel="prefetch" href="/assets/js/33.53e29142.js"><link rel="prefetch" href="/assets/js/34.7ce01d2e.js"><link rel="prefetch" href="/assets/js/35.bcdc888c.js"><link rel="prefetch" href="/assets/js/36.00ce19aa.js"><link rel="prefetch" href="/assets/js/37.e53fea30.js"><link rel="prefetch" href="/assets/js/38.1b84e50f.js"><link rel="prefetch" href="/assets/js/39.ed0470cb.js"><link rel="prefetch" href="/assets/js/4.93dbb352.js"><link rel="prefetch" href="/assets/js/40.010f2420.js"><link rel="prefetch" href="/assets/js/41.7aefa9d2.js"><link rel="prefetch" href="/assets/js/42.eadeaa1f.js"><link rel="prefetch" href="/assets/js/43.012419aa.js"><link rel="prefetch" href="/assets/js/44.aa86bffd.js"><link rel="prefetch" href="/assets/js/45.b7ce8c1a.js"><link rel="prefetch" href="/assets/js/46.bd51c47b.js"><link rel="prefetch" href="/assets/js/47.71d2a52e.js"><link rel="prefetch" href="/assets/js/48.71b9430b.js"><link rel="prefetch" href="/assets/js/49.d92deee5.js"><link rel="prefetch" href="/assets/js/5.9228d2a8.js"><link rel="prefetch" href="/assets/js/50.2827e7a9.js"><link rel="prefetch" href="/assets/js/51.94c41d82.js"><link rel="prefetch" href="/assets/js/52.73681932.js"><link rel="prefetch" href="/assets/js/53.4db7ebcf.js"><link rel="prefetch" href="/assets/js/54.8e6699ab.js"><link rel="prefetch" href="/assets/js/55.3d832a8c.js"><link rel="prefetch" href="/assets/js/56.43282683.js"><link rel="prefetch" href="/assets/js/57.ea8d4f37.js"><link rel="prefetch" href="/assets/js/58.12ff8ca5.js"><link rel="prefetch" href="/assets/js/59.47100612.js"><link rel="prefetch" href="/assets/js/6.341b2c5d.js"><link rel="prefetch" href="/assets/js/60.914e7e2d.js"><link rel="prefetch" href="/assets/js/61.d9414480.js"><link rel="prefetch" href="/assets/js/62.a3747f73.js"><link rel="prefetch" href="/assets/js/63.1a2e54c1.js"><link rel="prefetch" href="/assets/js/64.d9f9224a.js"><link rel="prefetch" href="/assets/js/65.53e3f7bd.js"><link rel="prefetch" href="/assets/js/66.92d44566.js"><link rel="prefetch" href="/assets/js/67.67aba1d2.js"><link rel="prefetch" href="/assets/js/68.acce7dfb.js"><link rel="prefetch" href="/assets/js/69.3dacbd45.js"><link rel="prefetch" href="/assets/js/7.3d063b98.js"><link rel="prefetch" href="/assets/js/70.b40c0f61.js"><link rel="prefetch" href="/assets/js/71.51b34635.js"><link rel="prefetch" href="/assets/js/72.498f4ff0.js"><link rel="prefetch" href="/assets/js/73.b22c0978.js"><link rel="prefetch" href="/assets/js/74.823f2a12.js"><link rel="prefetch" href="/assets/js/75.d24d261d.js"><link rel="prefetch" href="/assets/js/76.44db605e.js"><link rel="prefetch" href="/assets/js/77.efce42e9.js"><link rel="prefetch" href="/assets/js/78.11405a06.js"><link rel="prefetch" href="/assets/js/79.9f0076d7.js"><link rel="prefetch" href="/assets/js/8.812a9a47.js"><link rel="prefetch" href="/assets/js/80.4fc1dc52.js"><link rel="prefetch" href="/assets/js/81.f8963444.js"><link rel="prefetch" href="/assets/js/82.627d5503.js"><link rel="prefetch" href="/assets/js/83.49c45765.js"><link rel="prefetch" href="/assets/js/84.b2045805.js"><link rel="prefetch" href="/assets/js/85.420cfd4a.js"><link rel="prefetch" href="/assets/js/86.06ff7ec2.js"><link rel="prefetch" href="/assets/js/87.4dfb234a.js"><link rel="prefetch" href="/assets/js/88.079f044f.js"><link rel="prefetch" href="/assets/js/89.bb76f78f.js"><link rel="prefetch" href="/assets/js/9.8be13208.js"><link rel="prefetch" href="/assets/js/90.ae61c8f3.js"><link rel="prefetch" href="/assets/js/91.8728eb6a.js"><link rel="prefetch" href="/assets/js/92.0d8581e8.js"><link rel="prefetch" href="/assets/js/93.e05baea5.js"><link rel="prefetch" href="/assets/js/94.c661a216.js"><link rel="prefetch" href="/assets/js/95.5414604a.js"><link rel="prefetch" href="/assets/js/96.529def2c.js"><link rel="prefetch" href="/assets/js/97.fb2d6168.js"><link rel="prefetch" href="/assets/js/98.69e544d7.js"><link rel="prefetch" href="/assets/js/99.a7993a79.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92233c96.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="小诺文档中心" class="logo"> <span class="site-name can-hide">小诺文档中心</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://opersdev.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  小诺博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/devops/" class="nav-link">DevOps</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">云原生</a></div><div class="nav-item"><a href="/technology/" class="nav-link">技术</a></div><div class="nav-item"><a href="/more/" class="nav-link">更多</a></div><div class="nav-item"><a href="/wzdh/" class="nav-link">网址导航</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/opersdev" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/opersdev/docs/img/touxiang.jpg"> <div class="blogger-info"><h3>kevin</h3> <span>运维界的菜鸟</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://opersdev.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  小诺博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/devops/" class="nav-link">DevOps</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">云原生</a></div><div class="nav-item"><a href="/technology/" class="nav-link">技术</a></div><div class="nav-item"><a href="/more/" class="nav-link">更多</a></div><div class="nav-item"><a href="/wzdh/" class="nav-link">网址导航</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/opersdev" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>shell编程</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>消息队列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>web</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>ELK</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/4116bb/" aria-current="page" class="active sidebar-link">ELK笔记</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_1-1-什么是elk" class="sidebar-link">1.1 什么是ELK</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_1-2-elk常见的几种架构1-elasticsearch-logstash-kibana" class="sidebar-link">1.2 ELK常见的几种架构1 Elasticsearch + Logstash + Kibana</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_2-1-查看健康状态" class="sidebar-link">2.1 查看健康状态</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_2-2-安装可视化web界面" class="sidebar-link">2.2 安装可视化web界面</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_2-3-kibana设置用户密码" class="sidebar-link">2.3 kibana设置用户密码</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_2-4-使用redis配合logstash做队列缓冲" class="sidebar-link">2.4 使用redis配合logstash做队列缓冲</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_2-5-elasticsearch-restfull请求" class="sidebar-link">2.5 elasticsearch_restfull请求</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_2-6-elasticsearch报错" class="sidebar-link">2.6 elasticsearch报错</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_2-7-elasticsearch集群配置" class="sidebar-link">2.7 elasticsearch集群配置</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_3-1-filebeat配置" class="sidebar-link">3.1 filebeat配置</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_3-2-logstash配置" class="sidebar-link">3.2 logstash配置</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_4-1-收集nginx的json日志" class="sidebar-link">4.1 收集nginx的JSON日志</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_4-2-在filebeat-yml设置es索引重新命名" class="sidebar-link">4.2 在filebeat.yml设置es索引重新命名</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_4-3-收集tomcat的json日志" class="sidebar-link">4.3 收集tomcat的JSON日志</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_4-4-收集java多行日志" class="sidebar-link">4.4 收集JAVA多行日志</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_4-5-收集docker日志" class="sidebar-link">4.5 收集docker日志</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_4-6-filebeat-自带的模块modules收集日志" class="sidebar-link">4.6 Filebeat 自带的模块modules收集日志</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_9-配置文件参考" class="sidebar-link">9.配置文件参考</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/4116bb/#_9-1-filebeat" class="sidebar-link">9.1 filebeat</a></li><li class="sidebar-sub-header level3"><a href="/pages/4116bb/#_9-2-filebeat6-8" class="sidebar-link">9.2 filebeat6.8</a></li><li class="sidebar-sub-header level3"><a href="/pages/4116bb/#_9-3-docker" class="sidebar-link">9.3 docker</a></li><li class="sidebar-sub-header level3"><a href="/pages/4116bb/#_9-4-tomcat" class="sidebar-link">9.4 tomcat</a></li><li class="sidebar-sub-header level3"><a href="/pages/4116bb/#_9-5-nginx" class="sidebar-link">9.5 nginx</a></li><li class="sidebar-sub-header level3"><a href="/pages/4116bb/#_9-6-java" class="sidebar-link">9.6 java</a></li><li class="sidebar-sub-header level3"><a href="/pages/4116bb/#_9-7-logstash配置" class="sidebar-link">9.7 logstash配置</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_10-elk架构图参考" class="sidebar-link">10.elk架构图参考</a></li><li class="sidebar-sub-header level2"><a href="/pages/4116bb/#_11-kibana日志分析图展示" class="sidebar-link">11.kibana日志分析图展示</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>自动化运维</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>linux</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/devops/#DevOps" data-v-06225672>DevOps</a></li><li data-v-06225672><a href="/devops/#ELK" data-v-06225672>ELK</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/opersdev" target="_blank" title="作者" class="beLink" data-v-06225672>xiaonuo</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-06-24</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">ELK笔记<!----></h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h1 id="elk安装"><a href="#elk安装" class="header-anchor">#</a> ELK安装</h1> <h4 id="_1-前期准备"><a href="#_1-前期准备" class="header-anchor">#</a> 1.前期准备</h4> <p>1.1  关闭防火墙
+systemctl stop firewalld &amp;&amp; systemctl disable firewalld</p> <p>1.2 关闭SELINUX
+sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config</p> <p>1.3 安装JDK
+yum install -y java-1.8*</p> <p>1.4 下载安装包</p> <p>mkdir /opt/soft &amp;&amp; cd /opt/soft</p> <p>wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.3.tar.gz</p> <p>wget https://artifacts.elastic.co/downloads/logstash/logstash-6.2.3.tar.gz</p> <p>wget https://artifacts.elastic.co/downloads/kibana/kibana-6.2.3-linux-x86_64.tar.gz</p> <p>tar xf elasticsearch-6.2.3.tar.gz -C /opt/
+tar xf logstash-6.2.3.tar.gz -C /opt/
+tar xf kibana-6.2.3-linux-x86_64.tar.gz -C /opt/</p> <h4 id="_2-配置elasticsearch"><a href="#_2-配置elasticsearch" class="header-anchor">#</a> 2.配置elasticsearch</h4> <p>2.1 新建用户
+useradd elast
+chown -R elast.elast /opt/elast</p> <p>2.2 修改配置文件
+cd /opt/elast/config
+cp elasticsearch.yml elasticsearch.yml.bak</p> <p>vim elasticsearch.yml</p> <p>cluster.name: ELK-Cluster
+node.name: master-node
+path.data: /opt/elast
+path.logs: /opt/elast/logs
+network.host: 192.168.200.238
+http.port: 9200</p> <p>2.3 优化内核</p> <p>echo &quot;vm.max_map_count=262144&quot; &gt;&gt; /etc/sysctl.conf
+sysctl -p</p> <p>vim /etc/security/limits.conf</p> <ul><li>soft nproc 65536</li> <li>hard nproc 65536</li> <li>soft nofile 65536</li> <li>hard nofile 65536</li></ul> <p>2.4 启动
+su - elast
+cd /opt/elast
+./bin/elasticsearch –d</p> <h4 id="_3-配置logstash"><a href="#_3-配置logstash" class="header-anchor">#</a> 3.配置logstash</h4> <p>Logstash 收集 nginx 日志之使用 grok 过滤插件解析日志，grok 作为一个 logstash 的过滤插件，支持根据模式解析文本日志行，拆成字段。</p> <p>3.1 新建配置文件</p> <p>cd /opt/logstash/config/conf.d
+vim logstash.conf</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>input <span class="token punctuation">{</span>
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+        path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;/var/log/messages&quot;</span><span class="token punctuation">]</span>
+        <span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;syslog&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+filter <span class="token punctuation">{</span>
+    grok <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span> <span class="token string">&quot;message&quot;</span>, <span class="token string">&quot;%{SYSLOGBASE} %{GREEDYDATA:conte
+nt}&quot;</span> <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+output <span class="token punctuation">{</span>
+    elasticsearch <span class="token punctuation">{</span>
+        hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.238:9200&quot;</span><span class="token punctuation">]</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;syslog-%{+YYY.MM.dd}&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>3.2 启动</p> <p>./logstash -f /opt/logstash/config/logstash.conf &amp;</p> <h4 id="_4-安装kibana"><a href="#_4-安装kibana" class="header-anchor">#</a> 4.安装kibana</h4> <p>4.1 修改配置文件</p> <p>cd /opt/kibana/config
+cp kibana.yml kibana.yml.bak
+vim kibana.yml</p> <p>server.port: 5601
+server.host: 192.168.200.238
+elasticsearch.url: &quot;http://192.168.200.238:9200&quot;
+logging.dest: /var/log/kibana.log</p> <p>touch /var/log/kibana.log
+chmod 777 /var/log/kibana.log</p> <p>4.2 启动</p> <p>/opt/kibana/bin/kibana &amp;</p> <h4 id="_5-使用rpm安装"><a href="#_5-使用rpm安装" class="header-anchor">#</a> 5.使用RPM安装</h4> <p>rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch</p> <p>rpm --install logstash-6.8.0.rpm
+rpm --install kibana-6.8.0-x86_64.rpm
+rpm --install elasticsearch-6.8.0.rpm</p> <h4 id="_6-yum安装"><a href="#_6-yum安装" class="header-anchor">#</a> 6.yum安装</h4> <p>6.1 安装 kibana</p> <p>cat &gt;/etc/yum.repos.d/kibana.repo &lt;&lt;EOF
+[kibana-6.x]
+name=Kibana repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md</p> <p>yum install kibana</p> <p>6.2 安装logstash</p> <p>cat &gt;/etc/yum.repos.d/logstash.repo &lt;&lt;EOF
+[logstash-6.x]
+name=Elastic repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+EOF</p> <p>sudo yum install logstash</p> <p>6.3 安装elasticsearch</p> <p>cat &gt;/etc/yum.repos.d/elasticsearch.repo &lt;&lt;EOF
+[elasticsearch-6.x]
+name=Elasticsearch repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md</p> <p>sudo yum install elasticsearch</p> <h4 id="_7-filebeat安装部署"><a href="#_7-filebeat安装部署" class="header-anchor">#</a> 7.filebeat安装部署</h4> <p>filebeat是一款轻量级的数据采集器，需要部署在每台需要收集日志的机器上。安装和配置过程很方便，如果机器很多，可以配合使用批量部署工具进行安装。</p> <p>安装
+linux 平台使用 rpm安装
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.8.0-x86_64.rpm
+sudo rpm -vi filebeat-6.8.0-x86_64.rpm</p> <p>编辑配置
+修改 filebeat.yml 以设置连接信息：
+output.elasticsearch:
+hosts: [&quot;&lt;es_url&gt;&quot;]
+username: &quot;elastic&quot;
+password: &quot;<password>&quot;
+setup.kibana:
+host: &quot;&lt;kibana_url&gt;&quot;</password></p> <p>其中，<password> 是 elastic 用户的密码，&lt;es_url&gt; 是 Elasticsearch 的 URL，&lt;kibana_url&gt; 是 Kibana 的 URL。</password></p> <p>3 启用和配置 system 模块
+从安装目录中，运行：
+./filebeat modules enable system
+在 modules.d/system.yml 文件中修改设置。</p> <p>4 启动 Filebeat
+setup 命令加载 Kibana 仪表板。如果仪表板已设置，请省略此命令。
+sudo filebeat setup
+sudo service filebeat start
+模块状态
+确认已从 Filebeat system 模块成功收到数据</p> <h1 id="elk笔记"><a href="#elk笔记" class="header-anchor">#</a> ELK笔记</h1> <h1 id="_1-elk基础知识"><a href="#_1-elk基础知识" class="header-anchor">#</a> 1. ELK基础知识</h1> <h2 id="_1-1-什么是elk"><a href="#_1-1-什么是elk" class="header-anchor">#</a> 1.1 什么是ELK</h2> <p>ELK是Elasticsearch + Logstash + Kibana 这种架构的简写。这是一种日志分平台析的架构。从前我们用shell三剑客(grep, sed, awk)来分析日志, 虽然也能对付大多数场景，但当日志量大，分析频繁，并且使用者可能不会shell三剑客的情况下， 配置方便，使用简单，并且分析结果更加直观的工具(平台)就诞生了，它就是ELK。 ELK是开源的，并且社区活跃，用户众多。当然国内也有一些收费的，比较好用的日志分析平台，比如日志易(日志易的同事赶紧给我打钱，毕竟这广告打的好)。</p> <h2 id="_1-2-elk常见的几种架构1-elasticsearch-logstash-kibana"><a href="#_1-2-elk常见的几种架构1-elasticsearch-logstash-kibana" class="header-anchor">#</a> 1.2 ELK常见的几种架构1 Elasticsearch + Logstash + Kibana</h2> <p>这是一种最简单的架构。这种架构，通过logstash收集日志，Elasticsearch分析日志，然后在Kibana(web界面)中展示。这种架构虽然是官网介绍里的方式，但是往往在生产中很少使用。2 Elasticsearch + Logstash + filebeat + Kibana</p> <p>与上一种架构相比，这种架构增加了一个filebeat模块。filebeat是一个轻量的日志收集代理，用来部署在客户端，优势是消耗非常少的资源(较logstash)， 所以生产中，往往会采取这种架构方式，但是这种架构有一个缺点，当logstash出现故障， 会造成日志的丢失。3 Elasticsearch + Logstash + filebeat + redis(也可以是其他中间件，比如kafka) + Kibana</p> <p>这种架构是上面那个架构的完善版，通过增加中间件，来避免数据的丢失。当Logstash出现故障，日志还是存在中间件中，当Logstash再次启动，则会读取中间件中积压的日志。目前我司使用的就是这种架构，我个人也比较推荐这种方式。</p> <p>说明： logstash节点和elasticsearch节点可以根据日志量伸缩数量， filebeat部署在每台需要收集日志的服务器上。</p> <p>elasticsearch 数据库，存数据</p> <p>logstash 收集日志，过滤数据</p> <p>kibana 分析，过滤，展示</p> <p>filebeat 收集日志，传输到ES</p> <p>beats 数据采集</p> <p>filebeat packetbeat metricbeat wirlogbeat heartbeat</p> <p>直接发送给elasticsearch或者经过logstash处理后发给elasticsearch</p> <p>elasticsearch 基于RESTful web接口 企业级搜索引擎</p> <p>Elasticsearch 是个开源分布式搜索引擎，提供搜集、分析、存储数据三大功能。它的特点有：分布式，</p> <p>零配置，自动发现，索引自动分片，索引副本机制，restful 风格接口，多数据源，自动搜索负载等。</p> <p>Logstash 主要是用来日志的搜集、分析、过滤日志的工具，支持大量的数据获取方式。一般工作方式为 c/s 架构，client 端安装在需要收集日志的主机上，server</p> <p>端负责将收到的各节点日志进行过滤、修改等操作在一并发往 elasticsearch 上去。</p> <p>elasticsearch搜索原理</p> <p>正排索引和倒排索引</p> <h1 id="_2-elk配置"><a href="#_2-elk配置" class="header-anchor">#</a> 2. ELK配置</h1> <p>1、开发人员为了排除问题，经常要上线服务器去查询项目日志</p> <p>2、项目越来越多，日志也越来越多</p> <p>3、图文展示</p> <h2 id="_2-1-查看健康状态"><a href="#_2-1-查看健康状态" class="header-anchor">#</a> 2.1 查看健康状态</h2> <p>curl http://192.168.200.238:9200/_cat/health?v</p> <p>curl -X PUT &quot;192.168.200.238:9200/customer/_doc/1?pretty&quot; -H 'Content-Type: application/json' -d'</p> <p>{</p> <p>&quot;name&quot;: &quot;John Doe&quot;</p> <p>}'</p> <p>curl -X GET &quot;localhost:9200/customer/_doc/1?pretty&quot;</p> <p>wget https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json</p> <p>curl -H &quot;Content-Type: application/json&quot; -XPOST &quot;localhost:9200/bank/_doc/_bulk?pretty&amp;refresh&quot; --data-binary &quot;@accounts.json&quot;</p> <p>curl &quot;localhost:9200/_cat/indices?v&quot;</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>curl -X GET &quot;localhost:9200/bank/_search?pretty&quot; -H 'Content-Type: application/json' -d'
+{
+ &quot;query&quot;: { &quot;match_all&quot;: {} },
+ &quot;sort&quot;: [
+  { &quot;account_number&quot;: &quot;asc&quot; }
+ ]
+}'
+ 
+curl -X GET &quot;localhost:9200/bank/_search?pretty&quot; -H 'Content-Type: application/json' -d'
+{
+ &quot;query&quot;: { &quot;match_all&quot;: {} },
+ &quot;sort&quot;: [
+  { &quot;account_number&quot;: &quot;asc&quot; }
+ ],
+ &quot;from&quot;: 10,
+ &quot;size&quot;: 10
+}
+'
+ 
+curl -X GET &quot;localhost:9200/bank/_search?pretty&quot; -H 'Content-Type: application/json' -d'
+{
+ &quot;query&quot;: { &quot;match&quot;: { &quot;address&quot;: &quot;mill lane&quot; } }
+}
+'
+ 
+curl -X GET &quot;localhost:9200/bank/_search?pretty&quot; -H 'Content-Type: application/json' -d'
+{
+ &quot;query&quot;: { &quot;match_phrase&quot;: { &quot;address&quot;: &quot;mill lane&quot; } }
+}
+'
+ 
+curl -X GET &quot;localhost:9200/bank/_search?pretty&quot; -H 'Content-Type: application/json' -d'
+{
+ &quot;query&quot;: {
+  &quot;bool&quot;: {
+   &quot;must&quot;: [
+​    { &quot;match&quot;: { &quot;age&quot;: &quot;40&quot; } }
+   ],
+   &quot;must_not&quot;: [
+​    { &quot;match&quot;: { &quot;state&quot;: &quot;ID&quot; } }
+   ]
+  }
+ }
+}'
+ 
+curl -X GET &quot;localhost:9200/bank/_search?pretty&quot; -H 'Content-Type: application/json' -d'
+{
+ &quot;query&quot;: {
+  &quot;bool&quot;: {
+   &quot;must&quot;: { &quot;match_all&quot;: {} },
+   &quot;filter&quot;: {
+​    &quot;range&quot;: {
+​     &quot;balance&quot;: {
+​      &quot;gte&quot;: 20000,
+​      &quot;lte&quot;: 30000
+​     }
+​    }
+   }
+  }
+ }
+}'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br></div></div><h2 id="_2-2-安装可视化web界面"><a href="#_2-2-安装可视化web界面" class="header-anchor">#</a> 2.2 安装可视化web界面</h2> <p>https://github.com/mobz/elasticsearch-head</p> <p>无法连接集群 在elasticsearch.yml 添加以下两行 重启elastic</p> <p>http.cors.enabled: true</p> <p>http.cors.allow-origin: &quot;*&quot;</p> <h2 id="_2-3-kibana设置用户密码"><a href="#_2-3-kibana设置用户密码" class="header-anchor">#</a> 2.3 kibana设置用户密码</h2> <p>1.使用x-pax</p> <p>2.使用nginx第三方给http加密</p> <p>auth_basic &quot;Please input user and password&quot;;</p> <p>auth_basic_user_file /opt/nginx/conf/conf.d/passwd.db;</p> <p>openssl passwd -crypt 123456</p> <p>echo &quot;wangkai:Y7ewBcZVm2DI.&quot; &gt;passwd.db</p> <h2 id="_2-4-使用redis配合logstash做队列缓冲"><a href="#_2-4-使用redis配合logstash做队列缓冲" class="header-anchor">#</a> 2.4 使用redis配合logstash做队列缓冲</h2> <p>设置redis密码和监听地址</p> <p>requirepass 123456</p> <p>bind 0.0.0.0</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>input {
+    redis {
+        host =&gt; [&quot;192.168.200.238:6379&quot;]
+        password =&gt; &quot;123456&quot;
+        db =&gt; &quot;0&quot;
+        data_type =&gt; &quot;list&quot;
+        key =&gt; &quot;nginx-redis&quot;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_2-5-elasticsearch-restfull请求"><a href="#_2-5-elasticsearch-restfull请求" class="header-anchor">#</a> 2.5 elasticsearch_restfull请求</h2> <p>http://192.168.1.232:9200/haoke/user/_search</p> <p>_search 搜索</p> <p>_update 更新数据</p> <p>_bulk 批量操作</p> <p>_mget 批量查询</p> <p>判断文档是否存在</p> <p>HEAD /haoke/user/1005</p> <p>查询响应</p> <p>http://192.168.1.232:9200/haoke/user/1001?pretty</p> <p>指定响应字段</p> <p>GET /haoke/user/1005?_source=id,name</p> <p>GET /haoke/user/1005/_source</p> <h2 id="_2-6-elasticsearch报错"><a href="#_2-6-elasticsearch报错" class="header-anchor">#</a> 2.6 elasticsearch报错</h2> <p>[1]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
+修改
+elasticsearch.yml
+取消注释保留一个节点
+cluster.initial_master_nodes: [&quot;node-1&quot;]</p> <p>②[x]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]</p> <p>vim  /etc/security/limits.conf</p> <p>* soft nproc 65536</p> <p>* hard nproc 65536</p> <p>* soft nofile 65536</p> <p>* hard nofile 65536</p> <p>③[x]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</p> <p>vim  /etc/sysctl.conf</p> <div class="language- extra-class"><pre><code> vm.max_map_count=262144
+</code></pre></div><p>保存退出，sysctl -p 不重启使配置生效</p> <p>elasticsearch 集群无法启动出现如下提示 failed to send join request to master</p> <p>原因是：是因为复制的elasticsearch文件夹下包含了data文件中示例一的节点数据，需要把示例二data文件下的文件清空。</p> <p>删除es集群data数据库文件夹下所有文件即可</p> <h2 id="_2-7-elasticsearch集群配置"><a href="#_2-7-elasticsearch集群配置" class="header-anchor">#</a> 2.7 elasticsearch集群配置</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>cluster.name: es-itcast-cluster
+node.name: node01
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9200
+discovery.zen.ping.unicast.hosts: [&quot;192.168.200.232&quot;,&quot;192.168.200.233&quot;,&quot;192.168.200.234&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+
+cluster.name: es-itcast-cluster
+node.name: node02
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9200
+discovery.zen.ping.unicast.hosts: [&quot;192.168.200.232&quot;,&quot;192.168.200.233&quot;,&quot;192.168.200.234&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+
+cluster.name: es-itcast-cluster
+node.name: node03
+node.master: true
+node.data: true
+network.host: 0.0.0.0
+http.port: 9200
+discovery.zen.ping.unicast.hosts: [&quot;192.168.200.232&quot;,&quot;192.168.200.233&quot;,&quot;192.168.200.234&quot;]
+discovery.zen.minimum_master_nodes: 2
+http.cors.enabled: true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>http.cors.allow-origin: &quot;*&quot;</p> <h1 id="_3-filebeat-redis-logstash-eslaticsearch-kibana配置"><a href="#_3-filebeat-redis-logstash-eslaticsearch-kibana配置" class="header-anchor">#</a> 3.filebeat+redis+logstash+eslaticsearch+kibana配置</h1> <p>版本 6.8</p> <h2 id="_3-1-filebeat配置"><a href="#_3-1-filebeat配置" class="header-anchor">#</a> 3.1 filebeat配置</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>filebeat.inputs:
+- type: log
+ enabled: true
+ paths:
+  - /opt/nginx/logs/access.log
+ fields:
+  log_source: nginx-access
+- type: log
+ enabled: true
+ paths:
+  - /opt/nginx/logs/error.log
+ fields:
+  log_source: nginx-error
+filebeat.config.modules:
+ path: ${path.config}/modules.d/*.yml
+ reload.enabled: false
+setup.template.settings:
+ index.number_of_shards: 3
+setup.kibana:
+output.redis:
+ hosts: [&quot;192.168.200.238:6379&quot;]
+ password: &quot;123456&quot;
+ key: &quot;nginx_redis&quot;
+ db: 0
+ datatype: list
+processors:
+ - add_host_metadata: ~
+ - add_cloud_metadata: ~
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>配置文件</p> <p>filebeat 配置文件比较简单, 只需要配置一个filebeat.yml</p> <p>#============== Filebeat prospectors ===========
+filebeat.inputs:  # 6.3以前是 filebeat.prospectors:
+- type: log    # input类型,默认为log，6.0以前配置是 - input_type: log
+paths:
+- /var/log/java/test-java.log
+- /var/log/java/<em>.log
+- /var/log/</em>/*.log
+fields:<br>
+log_topic: java_log   # 附加的可选字段,以向output添加额外的信息。output里面可以使用这个变量
+multiline.pattern: '^['  #多行合并 同logstash的multiline用法相似
+multiline.negate: true
+multiline.match: after</p> <p>- type: log   # 一个配置文件里面可以同时收集多个日志
+enabled: true
+paths:
+- /var/log/nginx/*.log
+fields:
+my_log_topic: nginx_log</p> <p>常用配置</p> <p>type:  指定input类型，有log、stdin、redis、tcp、syslog等</p> <p>fields： 可以自定义添加字段，到output中去，后续可以使用这些字段，例如：</p> <p>fields:
+log_topic: mysql_slow
+idc: szjf
+tail_files: 默认为false。配置为true时，filebeat将从新文件的最后位置开始读取,而不是从开头读取新文件， 注意：如果配合日志轮循使用，新文件的第一行将被跳过。</p> <p>此选项适用于Filebeat尚未处理的文件。如果先前运行了Filebeat并且文件的状态已经保留，tail_files则不会应用。</p> <p>第一次运行Filebeat时，可以使用 tail_files: true 来避免索引旧的日志行。第一次运行后，建议禁用此选项。</p> <p>output<br>
+配置输出的位置，比如kafka，logstash，es，redis，file 等</p> <p>复制代码
+#================================ Outputs =====================================
+#-------------------------Kafka output ------------------------------</p> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">output.kafka</span><span class="token punctuation">:</span>
+ <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;kafka01:9092&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;kafka02:9092&quot;</span><span class="token punctuation">,</span>&quot;kafka03<span class="token punctuation">:</span><span class="token number">9092</span><span class="token punctuation">]</span>
+ <span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">'%{[fields.my_log_topic]}'</span>
+ <span class="token key atrule">partition.round_robin</span><span class="token punctuation">:</span>
+  <span class="token key atrule">reachable_only</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+ <span class="token key atrule">version</span><span class="token punctuation">:</span> 0.10.0.0
+ <span class="token key atrule">required_acks</span><span class="token punctuation">:</span> <span class="token number">1</span>
+ <span class="token key atrule">compression</span><span class="token punctuation">:</span> none
+ <span class="token key atrule">max_message_bytes</span><span class="token punctuation">:</span> <span class="token number">1000000</span>
+<span class="token comment">#output.logstash:</span>
+<span class="token comment"># hosts: [&quot;localhost:5044&quot;]</span>
+
+
+filebeat创建nginx仪表盘
+
+<span class="token key atrule">setup.kibana</span><span class="token punctuation">:</span>
+ <span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">&quot;192.168.200.238:5601&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>filebeat -c filebeat.yml setup</p> <p>kibana自定义图表</p> <p>可视化-添加-图表类型</p> <h2 id="_3-2-logstash配置"><a href="#_3-2-logstash配置" class="header-anchor">#</a> 3.2 logstash配置</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>output <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token string">&quot;nginx-access&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>fields<span class="token punctuation">]</span><span class="token punctuation">[</span>log_source<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+  elasticsearch <span class="token punctuation">{</span>
+    hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.238:9200&quot;</span><span class="token punctuation">]</span>
+    index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx-access-%{+YYY.MM.dd}&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token string">&quot;nginx-error&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>fields<span class="token punctuation">]</span><span class="token punctuation">[</span>log_source<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+  elasticsearch <span class="token punctuation">{</span>
+    hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.238:9200&quot;</span><span class="token punctuation">]</span>
+    index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx-error-%{+YYY.MM.dd}&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h1 id="_4-filebeat配置"><a href="#_4-filebeat配置" class="header-anchor">#</a> 4. filebeat配置</h1> <h2 id="_4-1-收集nginx的json日志"><a href="#_4-1-收集nginx的json日志" class="header-anchor">#</a> 4.1 收集nginx的JSON日志</h2> <div class="language-nginx line-numbers-mode"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">log_format</span> access_json <span class="token string">'{ &quot;@timestamp&quot;: &quot;<span class="token variable">$time_iso8601</span>&quot;, '</span>
+             <span class="token string">'&quot;time&quot;: &quot;<span class="token variable">$time_iso8601</span>&quot;, '</span>
+             <span class="token string">'&quot;remote_addr&quot;: &quot;<span class="token variable">$remote_addr</span>&quot;, '</span>
+             <span class="token string">'&quot;remote_user&quot;: &quot;<span class="token variable">$remote_user</span>&quot;, '</span>
+             <span class="token string">'&quot;body_bytes_sent&quot;: &quot;<span class="token variable">$body_bytes_sent</span>&quot;, '</span>
+             <span class="token string">'&quot;request_time&quot;: &quot;<span class="token variable">$request_time</span>&quot;, '</span>
+             <span class="token string">'&quot;status&quot;: &quot;<span class="token variable">$status</span>&quot;, '</span>
+             <span class="token string">'&quot;host&quot;: &quot;<span class="token variable">$host</span>&quot;, '</span>
+             <span class="token string">'&quot;request&quot;: &quot;<span class="token variable">$request</span>&quot;, '</span>
+             <span class="token string">'&quot;request_method&quot;: &quot;<span class="token variable">$request_method</span>&quot;, '</span>
+             <span class="token string">'&quot;uri&quot;: &quot;<span class="token variable">$uri</span>&quot;, '</span>
+             <span class="token string">'&quot;http_referrer&quot;: &quot;<span class="token variable">$http_referer</span>&quot;, '</span>
+             <span class="token string">'&quot;body_bytes_sent&quot;:&quot;<span class="token variable">$body_bytes_sent</span>&quot;, '</span>
+             <span class="token string">'&quot;http_x_forwarded_for&quot;: &quot;<span class="token variable">$http_x_forwarded_for</span>&quot;, '</span>
+             <span class="token string">'&quot;http_user_agent&quot;: &quot;<span class="token variable">$http_user_agent</span>&quot; '</span>
+          <span class="token string">'}'</span></span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>使用不正常的日志变量会导致JSON输出到elasticsearch失效</p> <p>在filebeat.yml加入json配置
+json.keys_under_root: true
+json.overwrite_keys: true</p> <h2 id="_4-2-在filebeat-yml设置es索引重新命名"><a href="#_4-2-在filebeat-yml设置es索引重新命名" class="header-anchor">#</a> 4.2 在filebeat.yml设置es索引重新命名</h2> <p>index: &quot;nginx-access-%{[beat.version]}-%{+yyyy.MM}&quot;
+setup.template.name: &quot;nginx&quot;
+setup.template.pattern: &quot;nginx-*&quot;</p> <h2 id="_4-3-收集tomcat的json日志"><a href="#_4-3-收集tomcat的json日志" class="header-anchor">#</a> 4.3 收集tomcat的JSON日志</h2> <p>vim /opt/tomcat/conf/server.xml
+在162行替换掉pattern的内容
+pattern=&quot;{&quot;clientip&quot;:&quot;%h&quot;,&quot;ClientUser&quot;:&quot;%l&quot;,&quot;authenticated&quot;:&quot;%u&quot;,&quot;AccessTime&quot;:&quot;%t&quot;,&quot;method&quot;:&quot;%r&quot;,&quot;status&quot;:&quot;%s&quot;,&quot;SendBytes&quot;:&quot;%b&quot;,&quot;Query?string&quot;:&quot;%q&quot;,&quot;partner&quot;:&quot;%{Referer}i&quot;,&quot;AgentVersion&quot;:&quot;%{User-Agent}i&quot;}&quot;/&gt;</p> <h2 id="_4-4-收集java多行日志"><a href="#_4-4-收集java多行日志" class="header-anchor">#</a> 4.4 收集JAVA多行日志</h2> <p>在filebeat.yml的paths同级加入
+multiline.pattern: '^['
+multiline.negate: true
+multiline.match: after</p> <h2 id="_4-5-收集docker日志"><a href="#_4-5-收集docker日志" class="header-anchor">#</a> 4.5 收集docker日志</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>filebeat.inputs:
+- type: docker
+ containers.ids: 
+  - '8b6fe7dc9e067b58476dc57d6986dd96d7100430c5de3b109a99cd56ac655347'
+
+filebeat.inputs:
+- type: log
+ enabled: true
+ paths:
+  - /var/lib/docker/containers/*/*json.log
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>收集多个docker容器的日志</p> <h2 id="_4-6-filebeat-自带的模块modules收集日志"><a href="#_4-6-filebeat-自带的模块modules收集日志" class="header-anchor">#</a> 4.6 Filebeat 自带的模块modules收集日志</h2> <p>Nginx,mongo,redis,mysql</p> <p>必须先在filebeat.yml配置
+filebeat modules enable nginx
+filebeat modules list</p> <p>elasticserach安装插件
+elasticsearch-plugin install ingest-user-agent
+elasticsearch-plugin install ingest-geoip</p> <h1 id="_5-kibana画图"><a href="#_5-kibana画图" class="header-anchor">#</a> 5. kibana画图</h1> <p>柱状图</p> <p>拆线图</p> <p>饼图</p> <p>仪表图</p> <p>拼接大屏展示</p> <p>巧用ELK快速实现网站流量监控可视化
+https://blog.csdn.net/qq_41699100/article/details/81102719</p> <h1 id="_6-使用redis作为缓存"><a href="#_6-使用redis作为缓存" class="header-anchor">#</a> 6. 使用redis作为缓存</h1> <p>filebeat配置
+output.redis:
+hosts: [&quot;192.168.200.238:6379&quot;]
+data_type: &quot;list&quot;
+password: &quot;123456&quot;
+key: &quot;nginx-test&quot;
+db: 0</p> <p>logstash 配置文件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>input <span class="token punctuation">{</span>
+ redis <span class="token punctuation">{</span>
+  <span class="token function">host</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;192.168.200.238&quot;</span>
+  port <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">6379</span>
+  password <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">123456</span>
+  data_type <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;list&quot;</span>
+  key <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx-test&quot;</span>
+  db <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+output <span class="token punctuation">{</span>
+ <span class="token keyword">if</span> <span class="token punctuation">[</span>fields<span class="token punctuation">]</span><span class="token punctuation">[</span>log_source<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'access'</span> <span class="token punctuation">{</span>
+  elasticsearch <span class="token punctuation">{</span>
+   hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;http://192.168.200.211:9200&quot;</span>,<span class="token string">&quot;http://192.168.200.212&quot;</span>,<span class="token string">&quot;http://192.168.200.213&quot;</span><span class="token punctuation">]</span>
+   index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx-access-%{+YYYY.MM.dd}&quot;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+ <span class="token keyword">if</span> <span class="token punctuation">[</span>fields<span class="token punctuation">]</span><span class="token punctuation">[</span>log_source<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'error'</span> <span class="token punctuation">{</span>
+  elasticsearch <span class="token punctuation">{</span>
+   hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;http://192.168.200.211:9200&quot;</span>,<span class="token string">&quot;http://192.168.200.212&quot;</span>,<span class="token string">&quot;http://192.168.200.213&quot;</span><span class="token punctuation">]</span>
+   index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx-error-%{+YYYY.MM.dd}&quot;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h1 id="_7-kibana监控es集群"><a href="#_7-kibana监控es集群" class="header-anchor">#</a> 7. kibana监控ES集群</h1> <p>利用x-pack监控ES集群</p> <p>使用kafka作为缓存</p> <h1 id="_8-删除索引"><a href="#_8-删除索引" class="header-anchor">#</a> 8.删除索引</h1> <p>1、 #删除指定索引
+curl -XDELETE -u elastic:changeme  http://localhost:9200/acc-apply-2018.08.09  {&quot;acknowledged&quot;:true}</p> <p>2、#删除多个指定索引，中间用逗号隔开
+curl -XDELETE -u elastic:changeme  http://localhost:9200/acc-apply-2018.08.09,acc-apply-2018.08.10</p> <p>3、#模糊匹配删除</p> <p>curl -XDELETE -u elastic:changeme http://localhost:9200/acc-apply-*</p> <p>4、#使用通配符,删除所有的索引
+curl -XDELETE http://localhost:9200/_all  或 curl -XDELETE http://localhost:9200/*</p> <h2 id="_9-配置文件参考"><a href="#_9-配置文件参考" class="header-anchor">#</a> 9.配置文件参考</h2> <h3 id="_9-1-filebeat"><a href="#_9-1-filebeat" class="header-anchor">#</a> 9.1 filebeat</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/log/nginx/<span class="token important">*.log</span>
+  <span class="token key atrule">json.message_key</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">json.keys_under_root</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">fields</span><span class="token punctuation">:</span>
+    <span class="token key atrule">log_topic</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>192.168.5.159     <span class="token comment"># 附加的可选字段,以向output添加额外的信息。output里面可以使用这个变量</span>
+  <span class="token comment">#multiline.pattern: ^\-{63}   #多行合并 同logstash的multiline用法相似</span>
+  <span class="token comment">#multiline.negate: true</span>
+  <span class="token comment">#multiline.match: after</span>
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token comment"># Array of hosts to connect to.</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.5.30:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx-192.168.5.159index-%{+yyyy.MM.dd}&quot;</span>
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;filebeattest&quot;</span>
+<span class="token key atrule">setup.template.pattern</span><span class="token punctuation">:</span> <span class="token string">&quot;filebeattest-*&quot;</span>
+
+
+<span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token comment">#################nginx#############</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/log/nginx/access.log
+  <span class="token key atrule">json.keys_under_root</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">json.overwrite_keys</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span> 
+
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/log/nginx/error.log
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment">#################tomcat#############</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/log/tomcat/localhost_access_log.<span class="token important">*.txt</span>
+  <span class="token key atrule">json.keys_under_root</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">json.overwrite_keys</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;tomcat&quot;</span><span class="token punctuation">]</span> 
+
+<span class="token comment">#################es#############</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/log/elasticsearch/elasticsearch.log
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;es&quot;</span><span class="token punctuation">]</span> 
+  <span class="token key atrule">multiline.pattern</span><span class="token punctuation">:</span> <span class="token string">'^\['</span>
+  <span class="token key atrule">multiline.negate</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">multiline.match</span><span class="token punctuation">:</span> after 
+<span class="token comment">#################output#############</span>
+<span class="token key atrule">setup.kibana</span><span class="token punctuation">:</span>
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">&quot;10.0.0.51:5601&quot;</span>
+
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;10.0.0.51:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token comment">#index: &quot;nginx-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+  <span class="token key atrule">indices</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+      <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+        <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;access&quot;</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx-error-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+      <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+        <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;error&quot;</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+      <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+        <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat&quot;</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;es-java-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+      <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+        <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;es&quot;</span>
+
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx&quot;</span>
+<span class="token key atrule">setup.template.pattern</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx-*&quot;</span>
+<span class="token key atrule">setup.template.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">setup.template.overwrite</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br></div></div><h3 id="_9-2-filebeat6-8"><a href="#_9-2-filebeat6-8" class="header-anchor">#</a> 9.2 filebeat6.8</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> /opt/nginx/logs/<span class="token important">*.log</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;nginx-access&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">fields</span><span class="token punctuation">:</span>
+  <span class="token key atrule">from</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>access
+  <span class="token key atrule">fields_under_root</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">setup.template.settings</span><span class="token punctuation">:</span>
+  <span class="token key atrule">index.number_of_shards</span><span class="token punctuation">:</span> <span class="token number">3</span> 
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span> 
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.238:9200&quot;</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="_9-3-docker"><a href="#_9-3-docker" class="header-anchor">#</a> 9.3 docker</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> docker
+  <span class="token key atrule">containers.ids</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token string">'ef5c0310f7553e67c68fc909339b1a97b7560d003d8077ffc2a46294572513cd'</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.211:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.212:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.213:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">indices</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+       <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;access&quot;</span>
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;docker&quot;</span>
+<span class="token key atrule">setup.template.pattern</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-*&quot;</span>
+
+
+
+<span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/lib/docker/containers/<span class="token important">*/*json.log</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.211:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.212:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.213:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">indices</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-json-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+       <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;access&quot;</span>
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;docker&quot;</span>
+<span class="token key atrule">setup.template.pattern</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-*&quot;</span>
+
+
+
+
+<span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/lib/docker/containers/<span class="token important">*/*json.log</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.211:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.212:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.213:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">indices</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-nginx-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+	   <span class="token key atrule">attrs.service</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx&quot;</span>
+	   <span class="token key atrule">stream</span><span class="token punctuation">:</span> <span class="token string">&quot;stdout&quot;</span>
+	   
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-nginx-error-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+	   <span class="token key atrule">attrs.service</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx&quot;</span>
+	   <span class="token key atrule">stream</span><span class="token punctuation">:</span> <span class="token string">&quot;stderr&quot;</span>
+	   
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-tomcat-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+	   <span class="token key atrule">attrs.service</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat&quot;</span>
+	   <span class="token key atrule">stream</span><span class="token punctuation">:</span> <span class="token string">&quot;stdout&quot;</span>
+	   
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;docker-tomcat-error-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+	   <span class="token key atrule">attrs.service</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat&quot;</span>
+	   <span class="token key atrule">stream</span><span class="token punctuation">:</span> <span class="token string">&quot;stderr&quot;</span>
+       
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;docker&quot;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br></div></div><h3 id="_9-4-tomcat"><a href="#_9-4-tomcat" class="header-anchor">#</a> 9.4 tomcat</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /opt/tomcat8.5/logs/localhost_access_log<span class="token important">*.txt</span>
+  <span class="token key atrule">json.keys_under_root</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">overwrite_keys</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.211:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.212:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.213:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">indices</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+       <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;access&quot;</span>
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat&quot;</span>
+<span class="token key atrule">setup.template.pattern</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat-*&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="_9-5-nginx"><a href="#_9-5-nginx" class="header-anchor">#</a> 9.5 nginx</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /opt/nginx/logs/access.log
+  <span class="token key atrule">json.keys_under_root</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">overwrite_keys</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /opt/nginx/logs/error.log
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">]</span>
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.211:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.212:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.213:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">indices</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+       <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;access&quot;</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx-error-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+       <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;error&quot;</span>
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx&quot;</span>
+<span class="token key atrule">setup.template.pattern</span><span class="token punctuation">:</span> <span class="token string">&quot;nginx-*&quot;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="_9-6-java"><a href="#_9-6-java" class="header-anchor">#</a> 9.6 java</h3> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">filebeat.inputs</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /opt/tomcat8.5/logs/localhost_access_log<span class="token important">*.txt</span>
+  <span class="token key atrule">json.keys_under_root</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">overwrite_keys</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> log
+  <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> /var/log/elasticsearch/elasticsearch.log
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;es&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">multiline.pattern</span><span class="token punctuation">:</span> <span class="token string">'^\['</span>
+  <span class="token key atrule">multiline.negate</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">multiline.match</span><span class="token punctuation">:</span> after
+<span class="token key atrule">output.elasticsearch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hosts</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.200.211:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.212:9200&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;192.168.200.213:9200&quot;</span><span class="token punctuation">]</span>
+  <span class="token key atrule">indices</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+       <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;access&quot;</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">index</span><span class="token punctuation">:</span> <span class="token string">&quot;es-java-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
+     <span class="token key atrule">when.contains</span><span class="token punctuation">:</span>
+       <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token string">&quot;es&quot;</span>
+<span class="token key atrule">setup.template.name</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat&quot;</span>
+<span class="token key atrule">setup.template.pattern</span><span class="token punctuation">:</span> <span class="token string">&quot;tomcat-*&quot;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="_9-7-logstash配置"><a href="#_9-7-logstash配置" class="header-anchor">#</a> 9.7 logstash配置</h3> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>例：
+
+input <span class="token punctuation">{</span>
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+		<span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;tms_inbound.log&quot;</span>
+		path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/JavaWeb/tms2.wltest.com/logs/tms_inbound.es.*.log&quot;</span>
+		codec <span class="token operator">=</span><span class="token operator">&gt;</span> json <span class="token punctuation">{</span>
+				charset <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;UTF-8&quot;</span>
+			<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+ 
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+		<span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;tms_outbound.log&quot;</span>
+		path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/JavaWeb/tms2.wltest.com/logs/tms_outbound.es.*.log&quot;</span>
+		codec <span class="token operator">=</span><span class="token operator">&gt;</span> json <span class="token punctuation">{</span>
+				charset <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;UTF-8&quot;</span>
+			<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+ 
+ 
+output <span class="token punctuation">{</span>
+    
+	<span class="token keyword">if</span> <span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;tms_inbound.log&quot;</span> <span class="token punctuation">{</span>
+	   elasticsearch <span class="token punctuation">{</span> hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;10.230.3.183:9200&quot;</span>
+						index <span class="token operator">=</span><span class="token operator">&gt;</span>  <span class="token string">'tms_inbound.log-%{+YYYY.MM.dd}'</span>
+						codec <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;json&quot;</span> <span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	else<span class="token punctuation">{</span>
+	  elasticsearch <span class="token punctuation">{</span> hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;10.230.3.183:9200&quot;</span>
+						index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'tms_outbound.log-%{+YYYY.MM.dd}'</span>
+						codec <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;json&quot;</span> <span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+ 
+<span class="token punctuation">}</span>
+
+input <span class="token punctuation">{</span>
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+		<span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;tms_inbound.log&quot;</span>
+		path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/JavaWeb/tms2.wltest.com/logs/tms_inbound.es.*.log&quot;</span>
+		codec <span class="token operator">=</span><span class="token operator">&gt;</span> json <span class="token punctuation">{</span>
+				charset <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;UTF-8&quot;</span>
+			<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+ 
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+		<span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;tms_outbound.log&quot;</span>
+		path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/JavaWeb/tms2.wltest.com/logs/tms_outbound.es.*.log&quot;</span>
+		codec <span class="token operator">=</span><span class="token operator">&gt;</span> json <span class="token punctuation">{</span>
+				charset <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;UTF-8&quot;</span>
+			<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+ 
+ 
+output <span class="token punctuation">{</span>
+    
+	<span class="token keyword">if</span> <span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;tms_inbound.log&quot;</span> <span class="token punctuation">{</span>
+	   elasticsearch <span class="token punctuation">{</span> hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;10.230.3.183:9200&quot;</span>
+						index <span class="token operator">=</span><span class="token operator">&gt;</span>  <span class="token string">'tms_inbound.log-%{+YYYY.MM.dd}'</span>
+						codec <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;json&quot;</span> <span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	else<span class="token punctuation">{</span>
+	  elasticsearch <span class="token punctuation">{</span> hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;10.230.3.183:9200&quot;</span>
+						index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'tms_outbound.log-%{+YYYY.MM.dd}'</span>
+						codec <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;json&quot;</span> <span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+ 
+<span class="token punctuation">}</span>
+总结：如果我们要配置多个input，然后根据不同input的type来配置不同的到处方式。
+
+下面是我个人在用的一个配置文件，一方面获取linux系统日志,一方面获取nginx日志
+
+
+
+下面是个人配置源配置文件
+
+input <span class="token punctuation">{</span>   
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+	<span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;nginxlog&quot;</span>
+        path <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;/usr/local/nginx/logs/access.log&quot;</span>
+        start_position <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;beginning&quot;</span>
+        sincedb_path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/home/write&quot;</span>
+        tags <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;shooter_tag&quot;</span>
+        <span class="token comment">#delimiter =&gt; &quot;\n&quot;</span>
+        discover_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">15</span>
+        stat_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span>
+        sincedb_write_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">15</span>
+        codec <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;json&quot;</span>
+        <span class="token comment">#codec =&gt; multiline {</span>
+        <span class="token comment">#    pattern =&gt; &quot;^\d&quot;</span>
+        <span class="token comment">#    negate =&gt; true</span>
+        <span class="token comment">#    what =&gt; &quot;previous&quot;</span>
+        <span class="token comment">#}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+        path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/var/log/messages&quot;</span>
+        <span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;systemlog&quot;</span>
+        start_position <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;beginning&quot;</span>
+        stat_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;2&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+filter <span class="token punctuation">{</span>
+    mutate <span class="token punctuation">{</span>
+        gsub <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;message&quot;</span>, <span class="token string">&quot;<span class="token entity" title="\\">\\</span>x&quot;</span>, <span class="token string">&quot;<span class="token entity" title="\\">\\</span>\x&quot;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    json <span class="token punctuation">{</span>
+        <span class="token builtin class-name">source</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;message&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;message&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;severity&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;pid&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;logsource&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;timestamp&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;facility_label&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;type&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;facility&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;@version&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;priority&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;severity_label&quot;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">date</span> <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;time_local&quot;</span>, <span class="token string">&quot;ISO8601&quot;</span><span class="token punctuation">]</span>
+        target <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;@timestamp&quot;</span>
+    <span class="token punctuation">}</span>
+    grok <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;time_local&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;(?&lt;day&gt;.{10})&quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    grok <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;request&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;%{WORD:method} (?&lt;url&gt;.* )&quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    grok <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;http_referer&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;(?&lt;referer&gt;-|%{URIPROTO}://(?:%{USER}(?::[^@]*)?@)?(?:%{URIHOST})?)&quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    mutate <span class="token punctuation">{</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;request&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http_referer&quot;</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;http_user_agent&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;agent&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;upstream_response_time&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;response_time&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;host&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;log_source&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;http_x_forwarded_for&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;x_forwarded_for&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">split</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;x_forwarded_for&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;, &quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">split</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;response_time&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;, &quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">#alter {</span>
+    <span class="token comment">#    condrewrite =&gt; [</span>
+    <span class="token comment">#        &quot;x_forwarded_for&quot;, &quot;-&quot;, &quot;0.0.0.0&quot;,</span>
+    <span class="token comment">#        &quot;x_forwarded_for&quot;, &quot;unknown&quot;, &quot;0.0.0.0&quot;,</span>
+    <span class="token comment">#        &quot;response_time&quot;, &quot;-&quot;, &quot;0&quot;,</span>
+    <span class="token comment">#        &quot;real_ip&quot;, &quot;&quot;, &quot;0.0.0.0&quot;</span>
+    <span class="token comment">#    ]</span>
+    <span class="token comment">#}</span>
+<span class="token punctuation">}</span>
+ 
+output <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;nginxlog&quot;</span> <span class="token punctuation">{</span>
+    elasticsearch <span class="token punctuation">{</span> 
+	hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.6.121:9200&quot;</span><span class="token punctuation">]</span>
+        <span class="token assign-left variable">action</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;index&quot;</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx-tologs-%{+YYYY.MM.dd}&quot;</span>
+        user <span class="token operator">=</span><span class="token operator">&gt;</span> elastic
+        password <span class="token operator">=</span><span class="token operator">&gt;</span> changeme
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span>
+        template_overwrite <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span>
+        template_name <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;mynginx&quot;</span>
+        template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/opt/logstash-5.6.4/template/mynginxtemplate.json&quot;</span>
+        codec <span class="token operator">=</span><span class="token operator">&gt;</span> json
+    <span class="token punctuation">}</span>
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+        flush_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">600</span>
+        path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'/home/nginxlog/nginx_tologs-%{+YYYY.MM.dd}.log'</span>
+    <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">if</span> <span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;systemlog&quot;</span> <span class="token punctuation">{</span>
+
+  	elasticsearch <span class="token punctuation">{</span>
+        	hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.6.121:9200&quot;</span><span class="token punctuation">]</span>
+        	index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;logstash-systemlog-%{+YYYY.MM.dd}&quot;</span>
+  	<span class="token punctuation">}</span>
+   	<span class="token function">file</span> <span class="token punctuation">{</span>
+        	path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/home/nginxlog/logstash-systemlog-%{+YYYY.MM.dd}&quot;</span>
+ 
+  	<span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+input <span class="token punctuation">{</span>   
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+	<span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;nginxlog&quot;</span>
+        path <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;/usr/local/nginx/logs/access.log&quot;</span>
+        start_position <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;beginning&quot;</span>
+        sincedb_path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/home/write&quot;</span>
+        tags <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;shooter_tag&quot;</span>
+        <span class="token comment">#delimiter =&gt; &quot;\n&quot;</span>
+        discover_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">15</span>
+        stat_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span>
+        sincedb_write_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">15</span>
+        codec <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;json&quot;</span>
+        <span class="token comment">#codec =&gt; multiline {</span>
+        <span class="token comment">#    pattern =&gt; &quot;^\d&quot;</span>
+        <span class="token comment">#    negate =&gt; true</span>
+        <span class="token comment">#    what =&gt; &quot;previous&quot;</span>
+        <span class="token comment">#}</span>
+    <span class="token punctuation">}</span>
+ 
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+        path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/var/log/messages&quot;</span>
+        <span class="token builtin class-name">type</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;systemlog&quot;</span>
+        start_position <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;beginning&quot;</span>
+        stat_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;2&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+filter <span class="token punctuation">{</span>
+    mutate <span class="token punctuation">{</span>
+        gsub <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;message&quot;</span>, <span class="token string">&quot;<span class="token entity" title="\\">\\</span>x&quot;</span>, <span class="token string">&quot;<span class="token entity" title="\\">\\</span>\x&quot;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    json <span class="token punctuation">{</span>
+        <span class="token builtin class-name">source</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;message&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;message&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;severity&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;pid&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;logsource&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;timestamp&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;facility_label&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;type&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;facility&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;@version&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;priority&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;severity_label&quot;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">date</span> <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;time_local&quot;</span>, <span class="token string">&quot;ISO8601&quot;</span><span class="token punctuation">]</span>
+        target <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;@timestamp&quot;</span>
+    <span class="token punctuation">}</span>
+    grok <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;time_local&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;(?&lt;day&gt;.{10})&quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    grok <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;request&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;%{WORD:method} (?&lt;url&gt;.* )&quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    grok <span class="token punctuation">{</span>
+        match <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;http_referer&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;(?&lt;referer&gt;-|%{URIPROTO}://(?:%{USER}(?::[^@]*)?@)?(?:%{URIHOST})?)&quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    mutate <span class="token punctuation">{</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;request&quot;</span>
+        remove_field <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http_referer&quot;</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;http_user_agent&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;agent&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;upstream_response_time&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;response_time&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;host&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;log_source&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">rename</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;http_x_forwarded_for&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;x_forwarded_for&quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">split</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;x_forwarded_for&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;, &quot;</span> <span class="token punctuation">}</span>
+        <span class="token function">split</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token string">&quot;response_time&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;, &quot;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">#alter {</span>
+    <span class="token comment">#    condrewrite =&gt; [</span>
+    <span class="token comment">#        &quot;x_forwarded_for&quot;, &quot;-&quot;, &quot;0.0.0.0&quot;,</span>
+    <span class="token comment">#        &quot;x_forwarded_for&quot;, &quot;unknown&quot;, &quot;0.0.0.0&quot;,</span>
+    <span class="token comment">#        &quot;response_time&quot;, &quot;-&quot;, &quot;0&quot;,</span>
+    <span class="token comment">#        &quot;real_ip&quot;, &quot;&quot;, &quot;0.0.0.0&quot;</span>
+    <span class="token comment">#    ]</span>
+    <span class="token comment">#}</span>
+<span class="token punctuation">}</span>
+ 
+output <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;nginxlog&quot;</span> <span class="token punctuation">{</span>
+    elasticsearch <span class="token punctuation">{</span> 
+	hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.6.121:9200&quot;</span><span class="token punctuation">]</span>
+        <span class="token assign-left variable">action</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;index&quot;</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx-tologs-%{+YYYY.MM.dd}&quot;</span>
+        user <span class="token operator">=</span><span class="token operator">&gt;</span> elastic
+        password <span class="token operator">=</span><span class="token operator">&gt;</span> changeme
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span>
+        template_overwrite <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span>
+        template_name <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;mynginx&quot;</span>
+        template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/opt/logstash-5.6.4/template/mynginxtemplate.json&quot;</span>
+        codec <span class="token operator">=</span><span class="token operator">&gt;</span> json
+    <span class="token punctuation">}</span>
+    <span class="token function">file</span> <span class="token punctuation">{</span>
+        flush_interval <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">600</span>
+        path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'/home/nginxlog/nginx_tologs-%{+YYYY.MM.dd}.log'</span>
+    <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">if</span> <span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot;systemlog&quot;</span> <span class="token punctuation">{</span>
+ 
+  	elasticsearch <span class="token punctuation">{</span>
+        	hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;192.168.6.121:9200&quot;</span><span class="token punctuation">]</span>
+        	index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;logstash-systemlog-%{+YYYY.MM.dd}&quot;</span>
+  	<span class="token punctuation">}</span>
+   	<span class="token function">file</span> <span class="token punctuation">{</span>
+        	path <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;/home/nginxlog/logstash-systemlog-%{+YYYY.MM.dd}&quot;</span>
+ 
+  	<span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br></div></div><h2 id="_10-elk架构图参考"><a href="#_10-elk架构图参考" class="header-anchor">#</a> 10.elk架构图参考</h2> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cf906a9f.gif" alt="IMG_256"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cf94091b.gif" alt="IMG_256"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cf97c536.gif" alt="IMG_256"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cf9bc532.gif" alt="IMG_256"></p> <h2 id="_11-kibana日志分析图展示"><a href="#_11-kibana日志分析图展示" class="header-anchor">#</a> 11.kibana日志分析图展示</h2> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cfa0e502.png" alt="1"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cfa548a5.png" alt="2"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cfaa2046.png" alt="3"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52cfb177eb.png" alt="4"></p></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/eddd8c/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">tomcat</div></a> <a href="/pages/6e7001/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">ansible笔记</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/eddd8c/" class="prev">tomcat</a></span> <span class="next"><a href="/pages/6e7001/">ansible笔记</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/613b69/"><div>
+            postgresql安装
+            <!----></div></a> <span class="date">06-24</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/8ae632/"><div>
+            oracle笔记
+            <!----></div></a> <span class="date">06-24</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/765fc1/"><div>
+            opengauss笔记
+            <!----></div></a> <span class="date">06-24</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:48211701@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/opersdev" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://all.aomtop.com" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2022
+    <span>kevin | <a href="https://github.com/opersdev" target="_blank">小诺运维</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><span class="close-but">×</span> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.38f1b0a4.js" defer></script><script src="/assets/js/2.6beb1dc7.js" defer></script><script src="/assets/js/27.5b193a22.js" defer></script>
+  </body>
+</html>

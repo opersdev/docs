@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>opengauss笔记 | 小诺文档中心</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css">
+    <meta name="description" content="运维技术文档,mysql,k8s,docker,linux,shell,python等技术文章。">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="keywords" content="运维技术文档,mysql,k8s,docker,linux,shell,python,技术文档,学习,面试,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.92233c96.css" as="style"><link rel="preload" href="/assets/js/app.38f1b0a4.js" as="script"><link rel="preload" href="/assets/js/2.6beb1dc7.js" as="script"><link rel="preload" href="/assets/js/52.73681932.js" as="script"><link rel="prefetch" href="/assets/js/10.4365b950.js"><link rel="prefetch" href="/assets/js/100.8dac6c81.js"><link rel="prefetch" href="/assets/js/101.a5556ac1.js"><link rel="prefetch" href="/assets/js/102.e3ff38b9.js"><link rel="prefetch" href="/assets/js/103.3bcf44f5.js"><link rel="prefetch" href="/assets/js/104.6d56e53e.js"><link rel="prefetch" href="/assets/js/105.4fc9762e.js"><link rel="prefetch" href="/assets/js/106.f507561a.js"><link rel="prefetch" href="/assets/js/107.6c94c756.js"><link rel="prefetch" href="/assets/js/108.f7ff1945.js"><link rel="prefetch" href="/assets/js/109.aeb1e532.js"><link rel="prefetch" href="/assets/js/11.fe1ff844.js"><link rel="prefetch" href="/assets/js/110.dda67b83.js"><link rel="prefetch" href="/assets/js/111.5b990f24.js"><link rel="prefetch" href="/assets/js/112.0a27d3a0.js"><link rel="prefetch" href="/assets/js/113.972cd001.js"><link rel="prefetch" href="/assets/js/114.875814a1.js"><link rel="prefetch" href="/assets/js/115.ec235d59.js"><link rel="prefetch" href="/assets/js/116.03bd2386.js"><link rel="prefetch" href="/assets/js/117.68765825.js"><link rel="prefetch" href="/assets/js/118.9d6d0255.js"><link rel="prefetch" href="/assets/js/119.ff84a82f.js"><link rel="prefetch" href="/assets/js/12.aa21f453.js"><link rel="prefetch" href="/assets/js/120.20639785.js"><link rel="prefetch" href="/assets/js/121.6c546150.js"><link rel="prefetch" href="/assets/js/122.48e85de5.js"><link rel="prefetch" href="/assets/js/123.fc931745.js"><link rel="prefetch" href="/assets/js/124.797d5fda.js"><link rel="prefetch" href="/assets/js/125.b23a31c7.js"><link rel="prefetch" href="/assets/js/126.d7a182fd.js"><link rel="prefetch" href="/assets/js/127.167a63d6.js"><link rel="prefetch" href="/assets/js/128.878d4a7e.js"><link rel="prefetch" href="/assets/js/129.a8957dfa.js"><link rel="prefetch" href="/assets/js/13.161be064.js"><link rel="prefetch" href="/assets/js/130.3961a295.js"><link rel="prefetch" href="/assets/js/131.9c4e7a56.js"><link rel="prefetch" href="/assets/js/132.41d26584.js"><link rel="prefetch" href="/assets/js/133.6d91047e.js"><link rel="prefetch" href="/assets/js/134.121ecf0e.js"><link rel="prefetch" href="/assets/js/135.6e30234c.js"><link rel="prefetch" href="/assets/js/136.6fab7ce4.js"><link rel="prefetch" href="/assets/js/137.209af36e.js"><link rel="prefetch" href="/assets/js/138.660f236e.js"><link rel="prefetch" href="/assets/js/139.81c29d19.js"><link rel="prefetch" href="/assets/js/14.d0f13635.js"><link rel="prefetch" href="/assets/js/140.d8f594ca.js"><link rel="prefetch" href="/assets/js/141.89fbea1c.js"><link rel="prefetch" href="/assets/js/142.643bccec.js"><link rel="prefetch" href="/assets/js/143.f270bffc.js"><link rel="prefetch" href="/assets/js/144.cf6f4c9a.js"><link rel="prefetch" href="/assets/js/145.093699b5.js"><link rel="prefetch" href="/assets/js/146.876575d0.js"><link rel="prefetch" href="/assets/js/147.dc120635.js"><link rel="prefetch" href="/assets/js/148.4a3ba80f.js"><link rel="prefetch" href="/assets/js/149.4afb7469.js"><link rel="prefetch" href="/assets/js/15.af46dbb5.js"><link rel="prefetch" href="/assets/js/150.4eb38cf2.js"><link rel="prefetch" href="/assets/js/151.4fe6a931.js"><link rel="prefetch" href="/assets/js/16.4cbf8beb.js"><link rel="prefetch" href="/assets/js/17.1da2b6ae.js"><link rel="prefetch" href="/assets/js/18.0402bfbf.js"><link rel="prefetch" href="/assets/js/19.230bfe93.js"><link rel="prefetch" href="/assets/js/20.0d20ddb2.js"><link rel="prefetch" href="/assets/js/21.9dbdbc8b.js"><link rel="prefetch" href="/assets/js/22.1410508d.js"><link rel="prefetch" href="/assets/js/23.63089216.js"><link rel="prefetch" href="/assets/js/24.e6fe9306.js"><link rel="prefetch" href="/assets/js/25.1240d0c9.js"><link rel="prefetch" href="/assets/js/26.0f4fb46d.js"><link rel="prefetch" href="/assets/js/27.5b193a22.js"><link rel="prefetch" href="/assets/js/28.90e27733.js"><link rel="prefetch" href="/assets/js/29.cdb75f6c.js"><link rel="prefetch" href="/assets/js/3.1229de89.js"><link rel="prefetch" href="/assets/js/30.23c0524a.js"><link rel="prefetch" href="/assets/js/31.bc292e1e.js"><link rel="prefetch" href="/assets/js/32.79645dcf.js"><link rel="prefetch" href="/assets/js/33.53e29142.js"><link rel="prefetch" href="/assets/js/34.7ce01d2e.js"><link rel="prefetch" href="/assets/js/35.bcdc888c.js"><link rel="prefetch" href="/assets/js/36.00ce19aa.js"><link rel="prefetch" href="/assets/js/37.e53fea30.js"><link rel="prefetch" href="/assets/js/38.1b84e50f.js"><link rel="prefetch" href="/assets/js/39.ed0470cb.js"><link rel="prefetch" href="/assets/js/4.93dbb352.js"><link rel="prefetch" href="/assets/js/40.010f2420.js"><link rel="prefetch" href="/assets/js/41.7aefa9d2.js"><link rel="prefetch" href="/assets/js/42.eadeaa1f.js"><link rel="prefetch" href="/assets/js/43.012419aa.js"><link rel="prefetch" href="/assets/js/44.aa86bffd.js"><link rel="prefetch" href="/assets/js/45.b7ce8c1a.js"><link rel="prefetch" href="/assets/js/46.bd51c47b.js"><link rel="prefetch" href="/assets/js/47.71d2a52e.js"><link rel="prefetch" href="/assets/js/48.71b9430b.js"><link rel="prefetch" href="/assets/js/49.d92deee5.js"><link rel="prefetch" href="/assets/js/5.9228d2a8.js"><link rel="prefetch" href="/assets/js/50.2827e7a9.js"><link rel="prefetch" href="/assets/js/51.94c41d82.js"><link rel="prefetch" href="/assets/js/53.4db7ebcf.js"><link rel="prefetch" href="/assets/js/54.8e6699ab.js"><link rel="prefetch" href="/assets/js/55.3d832a8c.js"><link rel="prefetch" href="/assets/js/56.43282683.js"><link rel="prefetch" href="/assets/js/57.ea8d4f37.js"><link rel="prefetch" href="/assets/js/58.12ff8ca5.js"><link rel="prefetch" href="/assets/js/59.47100612.js"><link rel="prefetch" href="/assets/js/6.341b2c5d.js"><link rel="prefetch" href="/assets/js/60.914e7e2d.js"><link rel="prefetch" href="/assets/js/61.d9414480.js"><link rel="prefetch" href="/assets/js/62.a3747f73.js"><link rel="prefetch" href="/assets/js/63.1a2e54c1.js"><link rel="prefetch" href="/assets/js/64.d9f9224a.js"><link rel="prefetch" href="/assets/js/65.53e3f7bd.js"><link rel="prefetch" href="/assets/js/66.92d44566.js"><link rel="prefetch" href="/assets/js/67.67aba1d2.js"><link rel="prefetch" href="/assets/js/68.acce7dfb.js"><link rel="prefetch" href="/assets/js/69.3dacbd45.js"><link rel="prefetch" href="/assets/js/7.3d063b98.js"><link rel="prefetch" href="/assets/js/70.b40c0f61.js"><link rel="prefetch" href="/assets/js/71.51b34635.js"><link rel="prefetch" href="/assets/js/72.498f4ff0.js"><link rel="prefetch" href="/assets/js/73.b22c0978.js"><link rel="prefetch" href="/assets/js/74.823f2a12.js"><link rel="prefetch" href="/assets/js/75.d24d261d.js"><link rel="prefetch" href="/assets/js/76.44db605e.js"><link rel="prefetch" href="/assets/js/77.efce42e9.js"><link rel="prefetch" href="/assets/js/78.11405a06.js"><link rel="prefetch" href="/assets/js/79.9f0076d7.js"><link rel="prefetch" href="/assets/js/8.812a9a47.js"><link rel="prefetch" href="/assets/js/80.4fc1dc52.js"><link rel="prefetch" href="/assets/js/81.f8963444.js"><link rel="prefetch" href="/assets/js/82.627d5503.js"><link rel="prefetch" href="/assets/js/83.49c45765.js"><link rel="prefetch" href="/assets/js/84.b2045805.js"><link rel="prefetch" href="/assets/js/85.420cfd4a.js"><link rel="prefetch" href="/assets/js/86.06ff7ec2.js"><link rel="prefetch" href="/assets/js/87.4dfb234a.js"><link rel="prefetch" href="/assets/js/88.079f044f.js"><link rel="prefetch" href="/assets/js/89.bb76f78f.js"><link rel="prefetch" href="/assets/js/9.8be13208.js"><link rel="prefetch" href="/assets/js/90.ae61c8f3.js"><link rel="prefetch" href="/assets/js/91.8728eb6a.js"><link rel="prefetch" href="/assets/js/92.0d8581e8.js"><link rel="prefetch" href="/assets/js/93.e05baea5.js"><link rel="prefetch" href="/assets/js/94.c661a216.js"><link rel="prefetch" href="/assets/js/95.5414604a.js"><link rel="prefetch" href="/assets/js/96.529def2c.js"><link rel="prefetch" href="/assets/js/97.fb2d6168.js"><link rel="prefetch" href="/assets/js/98.69e544d7.js"><link rel="prefetch" href="/assets/js/99.a7993a79.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92233c96.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="小诺文档中心" class="logo"> <span class="site-name can-hide">小诺文档中心</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://opersdev.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  小诺博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/devops/" class="nav-link">DevOps</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">云原生</a></div><div class="nav-item"><a href="/technology/" class="nav-link">技术</a></div><div class="nav-item"><a href="/more/" class="nav-link">更多</a></div><div class="nav-item"><a href="/wzdh/" class="nav-link">网址导航</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/opersdev" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/opersdev/docs/img/touxiang.jpg"> <div class="blogger-info"><h3>kevin</h3> <span>运维界的菜鸟</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://opersdev.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  小诺博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/devops/" class="nav-link">DevOps</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">云原生</a></div><div class="nav-item"><a href="/technology/" class="nav-link">技术</a></div><div class="nav-item"><a href="/more/" class="nav-link">更多</a></div><div class="nav-item"><a href="/wzdh/" class="nav-link">网址导航</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/opersdev" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/pages/af8481/" class="sidebar-link">redis</a></li><li><a href="/pages/67e803/" class="sidebar-link">mysql</a></li><li><a href="/pages/e1cbbf/" class="sidebar-link">mysql增删改查</a></li><li><a href="/pages/613b69/" class="sidebar-link">postgresql安装</a></li><li><a href="/pages/8ae632/" class="sidebar-link">oracle笔记</a></li><li><a href="/pages/765fc1/" aria-current="page" class="active sidebar-link">opengauss笔记</a></li><li><a href="/pages/82abc5/" class="sidebar-link">达梦笔记</a></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/dba/#数据库" data-v-06225672>数据库</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/opersdev" target="_blank" title="作者" class="beLink" data-v-06225672>xiaonuo</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-06-24</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><!----> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">opengauss笔记<!----></h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><p><strong>支持的硬件平台</strong></p> <p>openGauss支持运行在鲲鹏服务器和通用的x86服务器上：</p> <p>支持鲲鹏服务器和基于x86_64的通用PC服务器。</p> <p>支持本地存储（SATA、SAS、SSD）。</p> <p>支持千兆、万兆Ethernet网络。</p> <p><strong>支持的操作系统</strong></p> <p>ARM:</p> <p>openEuler 20.03 LTS （推荐采用此操作系统）</p> <p>麒麟V10</p> <p>X86:</p> <p>openEuler 20.03 LTS</p> <p>CentOS 7.6</p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52d5ad6040.png" alt="img"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52d5b1e325.png" alt="img"></p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52d5b5a80b.png" alt="img"></p> <p>最小内存</p> <p>功能调试32GB以上。</p> <p>CPU</p> <p>功能调试最小1×8 核 2.0GHz。</p> <p>安装</p> <p><img src="https://image.aomtop.com/i/2022/06/24/62b52d5b97f95.png" alt="img"></p> <p><strong>安装****openGauss</strong></p> <p><a href="https://opengauss.org/zh/docs/1.0.1/docs/installation/%E5%88%9B%E5%BB%BAXML%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html" target="_blank" rel="noopener noreferrer"><strong>创建XML****配置文件</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>安装openGauss前需要创建cluster_config.xml文件。cluster_config.xml文件包含部署openGauss的服务器信息、安装路径、IP地址以及端口号等。用于告知openGauss如何部署。用户需根据不同场配置对应的XML文件。</p> <p><a href="https://opengauss.org/zh/docs/1.0.1/docs/installation/%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83.html" target="_blank" rel="noopener noreferrer"><strong>初始化安装环境</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>为了保证openGauss的正确安装，请首先对主机环境进行配置。</p> <p><a href="https://opengauss.org/zh/docs/1.0.1/docs/installation/%E6%89%A7%E8%A1%8C%E5%AE%89%E8%A3%85.html" target="_blank" rel="noopener noreferrer"><strong>执行安装</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>执行前置脚本准备好openGauss安装环境之后，按照启动安装过程部署openGauss。</p> <p><a href="https://opengauss.org/zh/docs/1.0.1/docs/installation/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93.html" target="_blank" rel="noopener noreferrer"><strong>初始化数据库</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://opengauss.org/zh/docs/1.0.1/docs/installation/%E5%8F%AF%E9%80%89_%E8%AE%BE%E7%BD%AE%E5%A4%87%E6%9C%BA%E5%8F%AF%E8%AF%BB.html" target="_blank" rel="noopener noreferrer"><strong>（可选）设置备机可读</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>备机可读特性为可选特性，需要修改配置参数并重启主备机器后才能使用。在开启备机可读之后，备机将支持读操作，并满足数据一致性要求。</p> <p>yum install python36 bzip2 libaio-devel flex bison ncurses-devel glibc-devel patch</p> <p>1.6 修改操作系统配置</p> <p>（1）关闭防火墙和SeLinux</p> <p>systemctl disable firewalld.service</p> <p>systemctl stop firewalld.service</p> <p>sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config</p> <p>setenforce 0</p> <p>（2）设置字符集参数</p> <p>if [ &quot;$LANG&quot; != &quot;en_US.UTF-8&quot; ];then</p> <p>export LANG=en_US.UTF-8</p> <p>echo export LANG=en_US.UTF-8 &gt;&gt; /etc/profile</p> <p>fi</p> <p>（3）检查设置时区</p> <p>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p> <p>（4）关闭swap交换区</p> <p>swapoff -a</p> <p>（5）检查设置网卡MTU值</p> <p>推荐值是1500&lt;MTU&lt;8192，但默认的虚拟机环境是1500，不用修改</p> <p>1 [root@localhost ~]# ifconfig | grep ens32</p> <p>2 ens32: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500</p> <p>（6）设置root用户远程登录配置</p> <p>sed -i 's/^Banner .*/Banner none/' /etc/selinux/config</p> <p>sed -i 's/^#PermitRootLogin .*/PermitRootLogin yes/' /etc/selinux/config</p> <p>sed -i 's/^PermitRootLogin no/PermitRootLogin yes/' /etc/selinux/config</p> <p>systemctl restart sshd</p> <p>（7）修改操作系统参数（可选）</p> <p>​    有部分内核参数建议手动修改。</p> <p>echo 5 &gt; /proc/sys/net/ipv4/tcp_retries1</p> <p>echo 5 &gt; /proc/sys/net/ipv4/tcp_syn_retries</p> <p>echo 10 &gt; /proc/sys/net/sctp/path_max_retrans</p> <p>echo 10 &gt; /proc/sys/net/sctp/max_init_retransmits</p> <p>echo net.ipv4.tcp_retries1 = 5 &gt;&gt;/etc/sysctl.conf</p> <p>echo net.ipv4.tcp_syn_retries = 5 &gt;&gt;/etc/sysctl.conf</p> <p>echo net.sctp.path_max_retrans = 10 &gt;&gt;/etc/sysctl.conf</p> <p>echo net.sctp.max_init_retransmits = 10 &gt;&gt;/etc/sysctl.conf</p> <p>echo &quot;* soft nofile 1000000&quot; &gt;&gt;/etc/security/limits.conf</p> <p>echo &quot;* hard nofile 1000000&quot; &gt;&gt;/etc/security/limits.conf</p> <p>echo &quot;* soft nproc 60000&quot; &gt;&gt; /etc/security/limits.d/90‐nproc.conf</p> <p>关闭透明大页</p> <p>设置后需要重启生效</p> <p>vim /etc/rc.d/rc.local</p> <p>if test -f /sys/kernel/mm/transparent_hugepage/enabled; then</p> <p>echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled</p> <p>fi</p> <p>if test -f /sys/kernel/mm/transparent_hugepage/defrag; then</p> <p>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</p> <p>fi</p> <p>chmod +x /etc/rc.d/rc.local</p> <p>查看是否关闭</p> <p>cat /sys/kernel/mm/transparent_hugepage/enabled</p> <p>cat /sys/kernel/mm/transparent_hugepage/defrag</p> <p>1.14 修改主机名</p> <p>echo &quot;gaussdb&quot; &gt; /etc/hostname</p> <p>echo &quot;192.168.10.112 gaussdb&quot; &gt;&gt;/etc/hosts</p> <p>hostnamectl set-hostname gaussdb</p> <p>（8）NTP配置（可选）</p> <p>​    系统可能没有安装NTP时间同步服务，需要手动安装并开启。</p> <p>yum install -y ntp</p> <p>systemctl start ntpd &amp;&amp; systemctl enable ntpd</p> <p>修改系统版本为7.6</p> <p>vim /etc/redhat-release</p> <p>CentOS Linux release 7.6 (Core)</p> <p>groupadd dbgrp</p> <p>useradd -g dbgrp omm</p> <p>mkdir -p /opt/software/openGauss</p> <p>chmod 755 -R /opt/software</p> <p>cd /opt/software/openGauss</p> <p>tar -zxvf openGauss-1.0.1-openEULER-64bit.tar.gz</p> <p>vi /tmp/clusterconfig.xml</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>单节点配置文件示例：
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;ROOT&gt;
+
+  &lt;!-- openGauss整体信息 --&gt;
+
+  &lt;CLUSTER&gt;
+
+​    &lt;PARAM name=&quot;clusterName&quot; value=&quot;dbCluster&quot; /&gt;
+
+​    &lt;PARAM name=&quot;nodeNames&quot; value=&quot;gaussdb&quot; /&gt;
+
+​    &lt;PARAM name=&quot;backIp1s&quot; value=&quot;192.168.1.227&quot;/&gt;
+
+​    &lt;PARAM name=&quot;gaussdbAppPath&quot; value=&quot;/opt/huawei/install/app&quot; /&gt;
+
+​    &lt;PARAM name=&quot;gaussdbLogPath&quot; value=&quot;/var/log/omm&quot; /&gt;
+
+​    &lt;PARAM name=&quot;tmpMppdbPath&quot; value=&quot;/opt/huawei/tmp&quot; /&gt;
+
+​    &lt;PARAM name=&quot;gaussdbToolPath&quot; value=&quot;/opt/huawei/install/om&quot; /&gt;
+
+​    &lt;PARAM name=&quot;corePath&quot; value=&quot;/opt/huawei/corefile&quot; /&gt;
+
+​    &lt;PARAM name=&quot;clusterType&quot; value=&quot;single-inst&quot;/&gt;
+
+  &lt;/CLUSTER&gt;
+
+  &lt;!-- 每台服务器上的节点部署信息 --&gt;
+
+  &lt;DEVICELIST&gt;
+
+​    &lt;!-- node1上的节点部署信息 --&gt;
+
+​    &lt;DEVICE sn=&quot;1000001&quot;&gt;
+
+​      &lt;PARAM name=&quot;name&quot; value=&quot;gaussdb&quot;/&gt;
+
+​      &lt;PARAM name=&quot;azName&quot; value=&quot;AZ1&quot;/&gt;
+
+​      &lt;PARAM name=&quot;azPriority&quot; value=&quot;1&quot;/&gt;
+
+​      &lt;!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --&gt;
+
+​      &lt;PARAM name=&quot;backIp1&quot; value=&quot;192.168.1.227&quot;/&gt;
+
+​      &lt;PARAM name=&quot;sshIp1&quot; value=&quot;192.168.1.227&quot;/&gt;
+
+​      
+
+​      &lt;!--dbnode--&gt;
+
+​      &lt;PARAM name=&quot;dataNum&quot; value=&quot;1&quot;/&gt;
+
+​      &lt;PARAM name=&quot;dataPortBase&quot; value=&quot;26000&quot;/&gt;
+
+​      &lt;PARAM name=&quot;dataNode1&quot; value=&quot;/opt/huawei/install/data/db1&quot;/&gt;
+
+​    &lt;/DEVICE&gt;
+
+  &lt;/DEVICELIST&gt;
+
+&lt;/ROOT&gt;
+
+​    一主一备配置文件示例：
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;ROOT&gt;
+
+  &lt;!-- openGauss整体信息 --&gt;
+
+  &lt;CLUSTER&gt;
+
+​    &lt;PARAM name=&quot;clusterName&quot; value=&quot;dbCluster&quot; /&gt;
+
+​    &lt;PARAM name=&quot;nodeNames&quot; value=&quot;gaussdb1.sugon.com,gaussdb2.sugon.com&quot; /&gt;
+
+​    &lt;PARAM name=&quot;backIp1s&quot; value=&quot;192.168.5.11,192.168.5.12&quot;/&gt;
+
+​    &lt;PARAM name=&quot;gaussdbAppPath&quot; value=&quot;/opt/huawei/install/app&quot; /&gt;
+
+​    &lt;PARAM name=&quot;gaussdbLogPath&quot; value=&quot;/var/log/omm&quot; /&gt;
+
+​    &lt;PARAM name=&quot;tmpMppdbPath&quot; value=&quot;/opt/huawei/tmp&quot;/&gt;
+
+​    &lt;PARAM name=&quot;gaussdbToolPath&quot; value=&quot;/opt/huawei/install/om&quot; /&gt;
+
+​    &lt;PARAM name=&quot;corePath&quot; value=&quot;/opt/huawei/corefile&quot;/&gt;
+
+​    &lt;PARAM name=&quot;clusterType&quot; value=&quot;single-inst&quot;/&gt;
+
+  &lt;/CLUSTER&gt;
+
+  &lt;!-- 每台服务器上的节点部署信息 --&gt;
+
+  &lt;DEVICELIST&gt;
+
+​    &lt;!-- node1上的节点部署信息 --&gt;
+
+​    &lt;DEVICE sn=&quot;1000001&quot;&gt;
+
+​      &lt;PARAM name=&quot;name&quot; value=&quot;gaussdb1.sugon.com&quot;/&gt;
+
+​      &lt;PARAM name=&quot;azName&quot; value=&quot;AZ1&quot;/&gt;
+
+​      &lt;PARAM name=&quot;azPriority&quot; value=&quot;1&quot;/&gt;
+
+​      &lt;!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --&gt;
+
+​      &lt;PARAM name=&quot;backIp1&quot; value=&quot;192.168.5.11&quot;/&gt;
+
+​      &lt;PARAM name=&quot;sshIp1&quot; value=&quot;192.168.5.11&quot;/&gt;
+
+​      
+
+​      &lt;!--dbnode--&gt;
+
+​      &lt;PARAM name=&quot;dataNum&quot; value=&quot;1&quot;/&gt;
+
+​      &lt;PARAM name=&quot;dataPortBase&quot; value=&quot;26000&quot;/&gt;
+
+​      &lt;PARAM name=&quot;dataNode1&quot; value=&quot;/opt/huawei/install/data/db1,gaussdb2.sugon.com,/opt/huawei/install/data/db1&quot;/&gt;
+
+​    &lt;/DEVICE&gt;
+
+​    &lt;!-- node2上的节点部署信息，其中“name”的值配置为主机名称 --&gt;
+
+​    &lt;DEVICE sn=&quot;1000002&quot;&gt;
+
+​      &lt;PARAM name=&quot;name&quot; value=&quot;gaussdb2.sugon.com&quot;/&gt;
+
+​      &lt;PARAM name=&quot;azName&quot; value=&quot;AZ1&quot;/&gt;
+
+​      &lt;PARAM name=&quot;azPriority&quot; value=&quot;1&quot;/&gt;
+
+​      &lt;!-- 如果服务器只有一个网卡可用，将backIP1和sshIP1配置成同一个IP --&gt;
+
+​      &lt;PARAM name=&quot;backIp1&quot; value=&quot;192.168.5.12&quot;/&gt;
+
+​      &lt;PARAM name=&quot;sshIp1&quot; value=&quot;192.168.5.12&quot;/&gt;
+
+​    &lt;/DEVICE&gt;
+
+  &lt;/DEVICELIST&gt;
+
+&lt;/ROOT&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br></div></div><p>cd /opt/software/openGauss/script</p> <p>./gs_preinstall -U omm -G dbgrp -L -X /opt/software/openGauss/cluster_config.xml</p> <p>2.2 初始化安装环境</p> <p>（1）openEuler需修改脚本</p> <p># openEuler 需要执行以下操作，注释掉vm.min_free_kbytes=112640行</p> <p># sed -i 's/^sysctl -w vm.min_free_kbytes=112640/#&amp;/' /etc/profile.d/performance.sh</p> <p>（2）配置LD_LIBRARY_PATH环境变量，否则密码验证会报错</p> <p>export LD_LIBRARY_PATH=/opt/soft/opengauss/script/gspylib/clib:$LD_LIBRARY_PATH</p> <p>（3）执行gs_preinstall初始化安装环境</p> <p>cd /opt/software/opengauss/script</p> <p>./gs_preinstall -U omm -G dbgrp -X /tmp/clusterconfig.xml</p> <p>2.3 执行安装</p> <p>强制释放cache</p> <p>sync;echo 1 &gt; /proc/sys/vm/drop_caches</p> <p>修改postgressql.conf</p> <p>vim /opt/huawei/install/data/db1/postgresql.conf</p> <p>修改</p> <p>shared_buffers = 256MB</p> <p>chown -R omm.dbgrp /opt/software</p> <p>chown -R omm.dbgrp /home/omm</p> <p>su - omm</p> <p>ssh-keygen -t rsa</p> <p>cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</p> <p>gs_install -X /tmp/clusterconfig.xml</p> <p>启动数据库</p> <p>gs_ctl start -D /opt/huawei/install/data/db1</p> <p><strong>数据库操作指南</strong></p> <p>连接数据库</p> <p>gsql -d postgres -p 26000</p> <p>设置密码</p> <p>=# ALTER ROLE omm IDENTIFIED BY 'New_Password' REPLACE ' Old_Password';</p> <p>ALTER ROLE omm IDENTIFIED BY 'leden' REPLACE '2021@abcd';</p> <p>（3） 检查数据库状态，性能</p> <p>gs_om -t status --detail</p> <p>gs_om -t status --all</p> <p>gs_checkperf</p> <p>卸载重装</p> <p>4.1 卸载</p> <p>​    在主节点，登录omm用户，执行gs_uninstall脚本即可完成openGauss卸载。</p> <p>su – omm</p> <p>gs_uninstall --delete-data</p> <p>userdel -r omm</p> <p>远程登录数据库</p> <p>gs_guc set -N all -I all -h &quot;host all leden 192.168.1.0/24 sha256&quot;</p> <p>登陆数据库</p> <p>gsql -d postgres -p 26000</p> <p>postgres=# CREATE USER xinjiang PASSWORD '2020@abcd';</p> <p>授权</p> <p>新建权限</p> <p>alter user leden createrole;</p> <p>系统权限</p> <p>grant all privileges to leden;</p> <p>新建用户</p> <p>CREATE USER presoninfo PASSWORD '2020@abcd';</p> <p>修改密码</p> <p>alter user xinjiang identified by 'Aa123456' replace '2020@abcd';</p> <p>例如，下面示例中配置允许IP地址为10.10.0.30的客户端访问本机。</p> <p>gs_guc set -N all -I all -h &quot;host all jack 10.10.0.30/32 sha256&quot;</p> <p>修改数据库的最大连接数。</p> <p>ALTER DATABASE database_name</p> <p>[ [ WITH ] CONNECTION LIMIT connlimit ];</p> <p>修改数据库名称。</p> <p>ALTER DATABASE database_name</p> <p>RENAME TO new_name;</p> <p>修改数据库所属者。</p> <p>ALTER DATABASE database_name</p> <p>OWNER TO new_owner;</p> <p>修改数据库默认表空间。</p> <p>ALTER DATABASE database_name</p> <p>SET TABLESPACE new_tablespace;</p> <p>修改数据库指定会话参数值。</p> <p>ALTER DATABASE database_name</p> <p>SET configuration_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT };</p> <p>数据库配置参数重置。</p> <p>ALTER DATABASE database_name RESET</p> <p>{ configuration_parameter | ALL };</p> <p>修改数据库对象隔离属性。</p> <p>ALTER DATABASE database_name [ WITH ] { ENABLE | DISABLE } PRIVATE OBJECT;</p> <p>使用gs_dump导出postgres数据库</p> <p>gs_dump -W 2020@abcd -U xinjiang -f /tmp/postgres_backup.tar -p 26000 postgres -F t</p> <p>使用gs_dump同时导出hr和public模式</p> <p>gs_dump -W Bigdata@123 -U jack -f /home/omm/backup/MPPDB_schema_backup -p 8000 human_resource -n hr -F d</p></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/8ae632/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">oracle笔记</div></a> <a href="/pages/82abc5/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">达梦笔记</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/8ae632/" class="prev">oracle笔记</a></span> <span class="next"><a href="/pages/82abc5/">达梦笔记</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/613b69/"><div>
+            postgresql安装
+            <!----></div></a> <span class="date">06-24</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/8ae632/"><div>
+            oracle笔记
+            <!----></div></a> <span class="date">06-24</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/82abc5/"><div>
+            达梦笔记
+            <!----></div></a> <span class="date">06-24</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:48211701@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/opersdev" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://all.aomtop.com" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2019-2022
+    <span>kevin | <a href="https://github.com/opersdev" target="_blank">小诺运维</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><span class="close-but">×</span> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.38f1b0a4.js" defer></script><script src="/assets/js/2.6beb1dc7.js" defer></script><script src="/assets/js/52.73681932.js" defer></script>
+  </body>
+</html>
