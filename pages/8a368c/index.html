@@ -101,7 +101,7 @@ cat: linuxde.net: No such file or directory
 方法二：
 [root@localhost text]# cat linuxde.net &amp;&gt; out.txt
 </code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>因为错误信息被保存到了out.txt文件中。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[root@localhost text]# cat linuxde.net 2&gt; /dev/null
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>将错误输出丢弃到<code>/dev/null</code>中，/dev/null是一个特殊的设备文件，这个文件接受到任何数据都会被丢系，通常被称为位桶、黑洞。</p> <h3 id="tee命令"><a href="#tee命令" class="header-anchor">#</a> tee命令</h3> <p>tee命令可以将数据重定向到文件，另一方面还可以提供一份重定向数据的副本作为后续命令的stdin。</p> <p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32de3cf4.png" alt="文件的描述符和重定向"></p> <p>在终端打印stdout同时重定向到文件中：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>ls | tee out.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>将错误输出丢弃到<code>/dev/null</code>中，/dev/null是一个特殊的设备文件，这个文件接受到任何数据都会被丢系，通常被称为位桶、黑洞。</p> <h3 id="tee命令"><a href="#tee命令" class="header-anchor">#</a> tee命令</h3> <p>tee命令可以将数据重定向到文件，另一方面还可以提供一份重定向数据的副本作为后续命令的stdin。</p> <p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32de3cf4.png" alt="文件的描述符和重定向"></p> <p>在终端打印stdout同时重定向到文件中：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>ls | tee out.txt
 1.sh
 1.txt
 2.txt
@@ -260,7 +260,7 @@ test 条件表达式
 </code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>操作符</p> <ul><li>-a 或 &amp;&amp; ：逻辑与，“而且”的意思，前后两个表达式都成立时整个测试结果才为真，否则为假</li> <li>-o 或 || ： 逻辑或，“或者”的意思，操作符两边至少一个为真时，结果为真，否为为假</li> <li>! ：逻辑否，当制定条件不成立时，返回结果为真</li></ul> <h2 id="流程控制语句"><a href="#流程控制语句" class="header-anchor">#</a> 流程控制语句</h2> <p>Shell有一套自己的流程控制语句，其中包括条件语句、循环语句、选择语句等。</p> <h3 id="if条件语句"><a href="#if条件语句" class="header-anchor">#</a> if条件语句</h3> <p><strong>if 单分支</strong>：当“条件成立”时执行相应的操作。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>if 条件测试操作
   then 命令序列
 fi
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32e1dbf6.png" alt="if单分支">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32e1dbf6.png" alt="if单分支">
 if 单分支结构流程图</p> <p>示例</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/bin/bash
 #当/boot分区的空间使用超过80%，就输出报警信息。
 
@@ -273,7 +273,7 @@ fi
   then 命令序列1
   else 命令序列2
 fi
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32e473a2.png" alt="if双分支">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32e473a2.png" alt="if双分支">
 if 双分支结构流程图</p> <p>示例</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/bin/bash
 #判断iptables是否在运行，如果已经在运行提示信息，如果没有开启它。
 service iptables status &amp;&gt; /dev/null
@@ -291,12 +291,12 @@ elif ...
 else
  命令序列n
 fi
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32e71706.png" alt="if多分支">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32e71706.png" alt="if多分支">
 if多分支结构流程图</p> <h3 id="for循环语句"><a href="#for循环语句" class="header-anchor">#</a> for循环语句</h3> <p>根据标量的不同取值，重复执行一组命令操作。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>for 变量名 in 取值列表
 do
  命令序列
 done
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32e9ec86.png" alt="for循环">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32e9ec86.png" alt="for循环">
 for循环语句流程图</p> <p><strong>for循环的几种应用形式：</strong></p> <p>最基本的for循环： （传统的形式，for var in …)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/bin/bash
 for x in one two three four
 do
@@ -328,7 +328,7 @@ done
 do
   命令列表
 done
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32ec9bf6.png" alt="while循环">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32ec9bf6.png" alt="while循环">
 while循环流程图</p> <p>示例</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/bin/bash
 #批量添加20个系统账户用户名依次为user1~20
 i=1
@@ -350,7 +350,7 @@ done
  默认执行的命令序列
 ;;
 esac
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32f015eb.png" alt="case循环">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32f015eb.png" alt="case循环">
 case多重分支语句流程图</p> <p>示例</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/bin/bash
 case $1 in
 start)
@@ -367,7 +367,7 @@ esac
 do
  命令序列
 done
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32f2f405.png" alt="until循环">
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32f2f405.png" alt="until循环">
 until循环流程图</p> <p>示例</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#!/bin/bash
 myvar=1
 until [ $myvar -gt 10 ]
@@ -908,7 +908,7 @@ your name is oldboy.your password is 123456.your email is 12313@.qq.com.
 发送指定的字符串给系统</p> <p>（2）exp_continue命令
 让Expect程序继续匹配</p> <p>（3）send_user命令
 用来打印Expect脚本信息，类似echo</p> <p>（4）exit命令
-直接退出Expect脚本</p> <p><img src="https://image.aomtop.com/i/2022/06/13/62a6e32f60228.png" alt="img"></p> <h3 id="_5-expect关键字"><a href="#_5-expect关键字" class="header-anchor">#</a> 5.Expect关键字</h3> <p>（1）eof
+直接退出Expect脚本</p> <p><img src="https://cdn.jsdelivr.net/gh/opersdev/image/i/2022/06/13/62a6e32f60228.png" alt="img"></p> <h3 id="_5-expect关键字"><a href="#_5-expect关键字" class="header-anchor">#</a> 5.Expect关键字</h3> <p>（1）eof
 用于匹配结束符</p> <p>（2）timeout
 控制时间，是一个全局性的时间控制开关，可以通过为这个变量赋值来规定整个Expect操作的时间
 （即使命令没有任何错误，到了时间仍然会激活这个变量）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>spqwn ssh root@192.168.1.1 uptime
